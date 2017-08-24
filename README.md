@@ -4,7 +4,7 @@ team2
 
 <p>To play the bomberman game, you need to pull this repository and then do the following commands once you are in the team2 directory.</p>
 
-<p>You need to have python 2.7 installed to get the game working on your machine</p>
+<p>You need to have python 2.7 and Pygame installed to get the game working on your machine</p>
 
 python main.py
 
