@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>LobbyPack.StatsMenuMod</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="LobbyPack-module.html">Package&nbsp;LobbyPack</a> ::
+        Module&nbsp;StatsMenuMod
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="LobbyPack.StatsMenuMod-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="LobbyPack.StatsMenuMod-module.html">Module LobbyPack.StatsMenuMod</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">#Imports</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">pygame</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">,</tt> <tt class="py-name">math</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">locals</tt> <tt class="py-keyword">import</tt><tt class="py-op">*</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package ConfigPack=ConfigPack-module.html"><a title="ConfigPack" class="py-name" href="#" onclick="return doclink('link-0', 'ConfigPack', 'link-0');">ConfigPack</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module ConfigPack.ConfigMod=ConfigPack.ConfigMod-module.html"><a title="ConfigPack.ConfigMod" class="py-name" href="#" onclick="return doclink('link-1', 'ConfigMod', 'link-1');">ConfigMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class ConfigPack.ConfigMod.AppConfigs=ConfigPack.ConfigMod.AppConfigs-class.html"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-2', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class ConfigPack.ConfigMod.SubstateConfigs=ConfigPack.ConfigMod.SubstateConfigs-class.html"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-3', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class ConfigPack.ConfigMod.OtherConfigs=ConfigPack.ConfigMod.OtherConfigs-class.html"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-4', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-5" class="py-name" targets="Class ConfigPack.ConfigMod.FMConfigs=ConfigPack.ConfigMod.FMConfigs-class.html"><a title="ConfigPack.ConfigMod.FMConfigs" class="py-name" href="#" onclick="return doclink('link-5', 'FMConfigs', 'link-5');">FMConfigs</a></tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-6" class="py-name" targets="Package AppPack=AppPack-module.html"><a title="AppPack" class="py-name" href="#" onclick="return doclink('link-6', 'AppPack', 'link-6');">AppPack</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Module AppPack.SubstateMod=AppPack.SubstateMod-module.html"><a title="AppPack.SubstateMod" class="py-name" href="#" onclick="return doclink('link-7', 'SubstateMod', 'link-7');">SubstateMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-8" class="py-name" targets="Class AppPack.SubstateMod.Substate=AppPack.SubstateMod.Substate-class.html"><a title="AppPack.SubstateMod.Substate" class="py-name" href="#" onclick="return doclink('link-8', 'Substate', 'link-8');">Substate</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-9" class="py-name" targets="Package FileManagementPack=FileManagementPack-module.html"><a title="FileManagementPack" class="py-name" href="#" onclick="return doclink('link-9', 'FileManagementPack', 'link-9');">FileManagementPack</a></tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Module FileManagementPack.DatabaseMod=FileManagementPack.DatabaseMod-module.html"><a title="FileManagementPack.DatabaseMod" class="py-name" href="#" onclick="return doclink('link-10', 'DatabaseMod', 'link-10');">DatabaseMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-11" class="py-name" targets="Class FileManagementPack.DatabaseMod.HighscoreDatabase=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase" class="py-name" href="#" onclick="return doclink('link-11', 'HighscoreDatabase', 'link-11');">HighscoreDatabase</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-string">        This is the highscores substate. It handles how the data is displayed.</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-string">        It is only available from the main menu substate.</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="StatsMenu"></a><div id="StatsMenu-def"><a name="L13"></a><tt class="py-lineno"> 13</tt> <a class="py-toggle" href="#" id="StatsMenu-toggle" onclick="return toggle('StatsMenu');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html">StatsMenu</a><tt class="py-op">(</tt><tt class="py-base-class">Substate</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="StatsMenu-expanded"><a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">                Calls the parent's constructor that builds up everything needed.</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="StatsMenu.__init__"></a><div id="StatsMenu.__init__-def"><a name="L18"></a><tt class="py-lineno"> 18</tt> <a class="py-toggle" href="#" id="StatsMenu.__init__-toggle" onclick="return toggle('StatsMenu.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">screen</tt><tt class="py-op">,</tt> <tt class="py-param">fpsclock</tt><tt class="py-op">,</tt> <tt class="py-param">sound</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu.__init__-expanded"><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">                <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name" targets="Class LobbyPack.StatsMenuMod.StatsMenu=LobbyPack.StatsMenuMod.StatsMenu-class.html"><a title="LobbyPack.StatsMenuMod.StatsMenu" class="py-name" href="#" onclick="return doclink('link-12', 'StatsMenu', 'link-12');">StatsMenu</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method AppPack.AppMod.App.__init__()=AppPack.AppMod.App-class.html#__init__,Method AppPack.SubstateMod.Substate.__init__()=AppPack.SubstateMod.Substate-class.html#__init__,Method GamePack.BombMod.Bomb.__init__()=GamePack.BombMod.Bomb-class.html#__init__,Method GamePack.GameMod.Game.__init__()=GamePack.GameMod.Game-class.html#__init__,Method GamePack.GameOverMod.GameOver.__init__()=GamePack.GameOverMod.GameOver-class.html#__init__,Method GamePack.InGameMod.InGame.__init__()=GamePack.InGameMod.InGame-class.html#__init__,Method GamePack.InMenuMod.InMenu.__init__()=GamePack.InMenuMod.InMenu-class.html#__init__,Method GamePack.InMultMod.InMult.__init__()=GamePack.InMultMod.InMult-class.html#__init__,Method GamePack.MapMod.Map.__init__()=GamePack.MapMod.Map-class.html#__init__,Method GamePack.MonsterMod.Monster.__init__()=GamePack.MonsterMod.Monster-class.html#__init__,Method GamePack.PlayerMod.Player.__init__()=GamePack.PlayerMod.Player-class.html#__init__,Method GamePack.SoundMod.Sound.__init__()=GamePack.SoundMod.Sound-class.html#__init__,Method GamePack.TileMod.Tile.__init__()=GamePack.TileMod.Tile-class.html#__init__,Method GamePack.WinMod.Win.__init__()=GamePack.WinMod.Win-class.html#__init__,Method LobbyPack.AuthInfoMod.User.__init__()=LobbyPack.AuthInfoMod.User-class.html#__init__,Method LobbyPack.AuthMenuMod.AuthMenu.__init__()=LobbyPack.AuthMenuMod.AuthMenu-class.html#__init__,Method LobbyPack.LobbyMod.Lobby.__init__()=LobbyPack.LobbyMod.Lobby-class.html#__init__,Method LobbyPack.MainMenuMod.MainMenu.__init__()=LobbyPack.MainMenuMod.MainMenu-class.html#__init__,Method LobbyPack.OptionsMenuMod.OptionsMenu.__init__()=LobbyPack.OptionsMenuMod.OptionsMenu-class.html#__init__,Method LobbyPack.StatsMenuMod.StatsMenu.__init__()=LobbyPack.StatsMenuMod.StatsMenu-class.html#__init__"><a title="AppPack.AppMod.App.__init__
+AppPack.SubstateMod.Substate.__init__
+GamePack.BombMod.Bomb.__init__
+GamePack.GameMod.Game.__init__
+GamePack.GameOverMod.GameOver.__init__
+GamePack.InGameMod.InGame.__init__
+GamePack.InMenuMod.InMenu.__init__
+GamePack.InMultMod.InMult.__init__
+GamePack.MapMod.Map.__init__
+GamePack.MonsterMod.Monster.__init__
+GamePack.PlayerMod.Player.__init__
+GamePack.SoundMod.Sound.__init__
+GamePack.TileMod.Tile.__init__
+GamePack.WinMod.Win.__init__
+LobbyPack.AuthInfoMod.User.__init__
+LobbyPack.AuthMenuMod.AuthMenu.__init__
+LobbyPack.LobbyMod.Lobby.__init__
+LobbyPack.MainMenuMod.MainMenu.__init__
+LobbyPack.OptionsMenuMod.OptionsMenu.__init__
+LobbyPack.StatsMenuMod.StatsMenu.__init__" class="py-name" href="#" onclick="return doclink('link-13', '__init__', 'link-13');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">screen</tt><tt class="py-op">,</tt> <tt class="py-name">fpsclock</tt><tt class="py-op">,</tt> <tt class="py-name">sound</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-string">"""     </tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-string">                This method initializes the objects used in this substate.</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu._initObjects"></a><div id="StatsMenu._initObjects-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="StatsMenu._initObjects-toggle" onclick="return toggle('StatsMenu._initObjects');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#_initObjects">_initObjects</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu._initObjects-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu._initObjects-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">                 </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">                <tt class="py-comment">#Initialize</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase" class="py-name" href="#" onclick="return doclink('link-14', 'HighscoreDatabase', 'link-11');">HighscoreDatabase</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method LobbyPack.StatsMenuMod.StatsMenu.__loadScoreData()=LobbyPack.StatsMenuMod.StatsMenu-class.html#__loadScoreData"><a title="LobbyPack.StatsMenuMod.StatsMenu.__loadScoreData" class="py-name" href="#" onclick="return doclink('link-15', '__loadScoreData', 'link-15');">__loadScoreData</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__categories</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"Users"</tt><tt class="py-op">,</tt> <tt class="py-string">"Kills"</tt><tt class="py-op">,</tt> <tt class="py-string">"Deaths"</tt><tt class="py-op">,</tt> <tt class="py-string">"KDR"</tt><tt class="py-op">,</tt> <tt class="py-string">"Levels"</tt><tt class="py-op">]</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-string">"""     </tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-string">                This method initializes the images used in this substate.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu._initImages"></a><div id="StatsMenu._initImages-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="StatsMenu._initImages-toggle" onclick="return toggle('StatsMenu._initImages');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#_initImages">_initImages</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu._initImages-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu._initImages-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method LobbyPack.StatsMenuMod.StatsMenu.clearBackground()=LobbyPack.StatsMenuMod.StatsMenu-class.html#clearBackground"><a title="LobbyPack.StatsMenuMod.StatsMenu.clearBackground" class="py-name" href="#" onclick="return doclink('link-16', 'clearBackground', 'link-16');">clearBackground</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">                <tt class="py-comment">#Render Background</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background_file</tt> <tt class="py-op">=</tt> <tt class="py-string">"sprites/bg.jpg"</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">image</tt><tt class="py-op">.</tt><tt class="py-name">load</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background_file</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-string">                Ticks every frame. Has to be implemented in order to avoir the NotImplementedError exception,</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-string">                nothing special happens here for this particular substate.</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu._ticked"></a><div id="StatsMenu._ticked-def"><a name="L48"></a><tt class="py-lineno"> 48</tt> <a class="py-toggle" href="#" id="StatsMenu._ticked-toggle" onclick="return toggle('StatsMenu._ticked');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#_ticked">_ticked</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu._ticked-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu._ticked-expanded"><a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                <tt class="py-comment">#Return this if nothing changed</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_substate</tt> <tt class="py-op">=</tt> <tt id="link-17" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-17', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_STATSMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_STATSMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_STATSMENU" class="py-name" href="#" onclick="return doclink('link-18', 'SUBSTATE_STATSMENU', 'link-18');">SUBSTATE_STATSMENU</a></tt> </tt>
+</div><a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-string">                This method listens to user inputs and sets the right variable so that the</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-string">                render method displays whatever the user has input.</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu._listen"></a><div id="StatsMenu._listen-def"><a name="L57"></a><tt class="py-lineno"> 57</tt> <a class="py-toggle" href="#" id="StatsMenu._listen-toggle" onclick="return toggle('StatsMenu._listen');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#_listen">_listen</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu._listen-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu._listen-expanded"><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                <tt class="py-comment">#Event queue loop</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">event</tt> <tt class="py-keyword">in</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">                        <tt class="py-comment">#Quit event</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">type</tt> <tt class="py-op">==</tt> <tt id="link-19" class="py-name" targets="Variable AppPack.AppMod.QUIT=AppPack.AppMod-module.html#QUIT,Variable GamePack.BombMod.QUIT=GamePack.BombMod-module.html#QUIT,Variable GamePack.GameMod.QUIT=GamePack.GameMod-module.html#QUIT,Variable GamePack.GameOverMod.QUIT=GamePack.GameOverMod-module.html#QUIT,Variable GamePack.InGameMod.QUIT=GamePack.InGameMod-module.html#QUIT,Variable GamePack.InMenuMod.QUIT=GamePack.InMenuMod-module.html#QUIT,Variable GamePack.InMultMod.QUIT=GamePack.InMultMod-module.html#QUIT,Variable GamePack.MapMod.QUIT=GamePack.MapMod-module.html#QUIT,Variable GamePack.MonsterMod.QUIT=GamePack.MonsterMod-module.html#QUIT,Variable GamePack.PlayerMod.QUIT=GamePack.PlayerMod-module.html#QUIT,Variable GamePack.SoundMod.QUIT=GamePack.SoundMod-module.html#QUIT,Variable GamePack.TileMod.QUIT=GamePack.TileMod-module.html#QUIT,Variable GamePack.WinMod.QUIT=GamePack.WinMod-module.html#QUIT,Variable LobbyPack.AuthMenuMod.QUIT=LobbyPack.AuthMenuMod-module.html#QUIT,Variable LobbyPack.LobbyMod.QUIT=LobbyPack.LobbyMod-module.html#QUIT,Variable LobbyPack.MainMenuMod.QUIT=LobbyPack.MainMenuMod-module.html#QUIT,Variable LobbyPack.OptionsMenuMod.QUIT=LobbyPack.OptionsMenuMod-module.html#QUIT,Variable LobbyPack.StatsMenuMod.QUIT=LobbyPack.StatsMenuMod-module.html#QUIT"><a title="AppPack.AppMod.QUIT
+GamePack.BombMod.QUIT
+GamePack.GameMod.QUIT
+GamePack.GameOverMod.QUIT
+GamePack.InGameMod.QUIT
+GamePack.InMenuMod.QUIT
+GamePack.InMultMod.QUIT
+GamePack.MapMod.QUIT
+GamePack.MonsterMod.QUIT
+GamePack.PlayerMod.QUIT
+GamePack.SoundMod.QUIT
+GamePack.TileMod.QUIT
+GamePack.WinMod.QUIT
+LobbyPack.AuthMenuMod.QUIT
+LobbyPack.LobbyMod.QUIT
+LobbyPack.MainMenuMod.QUIT
+LobbyPack.OptionsMenuMod.QUIT
+LobbyPack.StatsMenuMod.QUIT" class="py-name" href="#" onclick="return doclink('link-19', 'QUIT', 'link-19');">QUIT</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">                                <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">quit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">                                <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">exit</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">                        <tt class="py-comment">#Key events</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">type</tt> <tt class="py-op">==</tt> <tt id="link-20" class="py-name" targets="Variable AppPack.AppMod.KEYDOWN=AppPack.AppMod-module.html#KEYDOWN,Variable GamePack.BombMod.KEYDOWN=GamePack.BombMod-module.html#KEYDOWN,Variable GamePack.GameMod.KEYDOWN=GamePack.GameMod-module.html#KEYDOWN,Variable GamePack.GameOverMod.KEYDOWN=GamePack.GameOverMod-module.html#KEYDOWN,Variable GamePack.InGameMod.KEYDOWN=GamePack.InGameMod-module.html#KEYDOWN,Variable GamePack.InMenuMod.KEYDOWN=GamePack.InMenuMod-module.html#KEYDOWN,Variable GamePack.InMultMod.KEYDOWN=GamePack.InMultMod-module.html#KEYDOWN,Variable GamePack.MapMod.KEYDOWN=GamePack.MapMod-module.html#KEYDOWN,Variable GamePack.MonsterMod.KEYDOWN=GamePack.MonsterMod-module.html#KEYDOWN,Variable GamePack.PlayerMod.KEYDOWN=GamePack.PlayerMod-module.html#KEYDOWN,Variable GamePack.SoundMod.KEYDOWN=GamePack.SoundMod-module.html#KEYDOWN,Variable GamePack.TileMod.KEYDOWN=GamePack.TileMod-module.html#KEYDOWN,Variable GamePack.WinMod.KEYDOWN=GamePack.WinMod-module.html#KEYDOWN,Variable LobbyPack.AuthMenuMod.KEYDOWN=LobbyPack.AuthMenuMod-module.html#KEYDOWN,Variable LobbyPack.LobbyMod.KEYDOWN=LobbyPack.LobbyMod-module.html#KEYDOWN,Variable LobbyPack.MainMenuMod.KEYDOWN=LobbyPack.MainMenuMod-module.html#KEYDOWN,Variable LobbyPack.OptionsMenuMod.KEYDOWN=LobbyPack.OptionsMenuMod-module.html#KEYDOWN,Variable LobbyPack.StatsMenuMod.KEYDOWN=LobbyPack.StatsMenuMod-module.html#KEYDOWN"><a title="AppPack.AppMod.KEYDOWN
+GamePack.BombMod.KEYDOWN
+GamePack.GameMod.KEYDOWN
+GamePack.GameOverMod.KEYDOWN
+GamePack.InGameMod.KEYDOWN
+GamePack.InMenuMod.KEYDOWN
+GamePack.InMultMod.KEYDOWN
+GamePack.MapMod.KEYDOWN
+GamePack.MonsterMod.KEYDOWN
+GamePack.PlayerMod.KEYDOWN
+GamePack.SoundMod.KEYDOWN
+GamePack.TileMod.KEYDOWN
+GamePack.WinMod.KEYDOWN
+LobbyPack.AuthMenuMod.KEYDOWN
+LobbyPack.LobbyMod.KEYDOWN
+LobbyPack.MainMenuMod.KEYDOWN
+LobbyPack.OptionsMenuMod.KEYDOWN
+LobbyPack.StatsMenuMod.KEYDOWN" class="py-name" href="#" onclick="return doclink('link-20', 'KEYDOWN', 'link-20');">KEYDOWN</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">                                <tt class="py-keyword">if</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-21" class="py-name" targets="Variable AppPack.AppMod.K_ESCAPE=AppPack.AppMod-module.html#K_ESCAPE,Variable GamePack.BombMod.K_ESCAPE=GamePack.BombMod-module.html#K_ESCAPE,Variable GamePack.GameMod.K_ESCAPE=GamePack.GameMod-module.html#K_ESCAPE,Variable GamePack.GameOverMod.K_ESCAPE=GamePack.GameOverMod-module.html#K_ESCAPE,Variable GamePack.InGameMod.K_ESCAPE=GamePack.InGameMod-module.html#K_ESCAPE,Variable GamePack.InMenuMod.K_ESCAPE=GamePack.InMenuMod-module.html#K_ESCAPE,Variable GamePack.InMultMod.K_ESCAPE=GamePack.InMultMod-module.html#K_ESCAPE,Variable GamePack.MapMod.K_ESCAPE=GamePack.MapMod-module.html#K_ESCAPE,Variable GamePack.MonsterMod.K_ESCAPE=GamePack.MonsterMod-module.html#K_ESCAPE,Variable GamePack.PlayerMod.K_ESCAPE=GamePack.PlayerMod-module.html#K_ESCAPE,Variable GamePack.SoundMod.K_ESCAPE=GamePack.SoundMod-module.html#K_ESCAPE,Variable GamePack.TileMod.K_ESCAPE=GamePack.TileMod-module.html#K_ESCAPE,Variable GamePack.WinMod.K_ESCAPE=GamePack.WinMod-module.html#K_ESCAPE,Variable LobbyPack.AuthMenuMod.K_ESCAPE=LobbyPack.AuthMenuMod-module.html#K_ESCAPE,Variable LobbyPack.LobbyMod.K_ESCAPE=LobbyPack.LobbyMod-module.html#K_ESCAPE,Variable LobbyPack.MainMenuMod.K_ESCAPE=LobbyPack.MainMenuMod-module.html#K_ESCAPE,Variable LobbyPack.OptionsMenuMod.K_ESCAPE=LobbyPack.OptionsMenuMod-module.html#K_ESCAPE,Variable LobbyPack.StatsMenuMod.K_ESCAPE=LobbyPack.StatsMenuMod-module.html#K_ESCAPE"><a title="AppPack.AppMod.K_ESCAPE
+GamePack.BombMod.K_ESCAPE
+GamePack.GameMod.K_ESCAPE
+GamePack.GameOverMod.K_ESCAPE
+GamePack.InGameMod.K_ESCAPE
+GamePack.InMenuMod.K_ESCAPE
+GamePack.InMultMod.K_ESCAPE
+GamePack.MapMod.K_ESCAPE
+GamePack.MonsterMod.K_ESCAPE
+GamePack.PlayerMod.K_ESCAPE
+GamePack.SoundMod.K_ESCAPE
+GamePack.TileMod.K_ESCAPE
+GamePack.WinMod.K_ESCAPE
+LobbyPack.AuthMenuMod.K_ESCAPE
+LobbyPack.LobbyMod.K_ESCAPE
+LobbyPack.MainMenuMod.K_ESCAPE
+LobbyPack.OptionsMenuMod.K_ESCAPE
+LobbyPack.StatsMenuMod.K_ESCAPE" class="py-name" href="#" onclick="return doclink('link-21', 'K_ESCAPE', 'link-21');">K_ESCAPE</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                                         </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_substate</tt> <tt class="py-op">=</tt> <tt id="link-22" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-22', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_MAINMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_MAINMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_MAINMENU" class="py-name" href="#" onclick="return doclink('link-23', 'SUBSTATE_MAINMENU', 'link-23');">SUBSTATE_MAINMENU</a></tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                                <tt class="py-comment"># Get highscores</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                                <tt class="py-keyword">if</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-24" class="py-name" targets="Variable AppPack.AppMod.K_k=AppPack.AppMod-module.html#K_k,Variable GamePack.BombMod.K_k=GamePack.BombMod-module.html#K_k,Variable GamePack.GameMod.K_k=GamePack.GameMod-module.html#K_k,Variable GamePack.GameOverMod.K_k=GamePack.GameOverMod-module.html#K_k,Variable GamePack.InGameMod.K_k=GamePack.InGameMod-module.html#K_k,Variable GamePack.InMenuMod.K_k=GamePack.InMenuMod-module.html#K_k,Variable GamePack.InMultMod.K_k=GamePack.InMultMod-module.html#K_k,Variable GamePack.MapMod.K_k=GamePack.MapMod-module.html#K_k,Variable GamePack.MonsterMod.K_k=GamePack.MonsterMod-module.html#K_k,Variable GamePack.PlayerMod.K_k=GamePack.PlayerMod-module.html#K_k,Variable GamePack.SoundMod.K_k=GamePack.SoundMod-module.html#K_k,Variable GamePack.TileMod.K_k=GamePack.TileMod-module.html#K_k,Variable GamePack.WinMod.K_k=GamePack.WinMod-module.html#K_k,Variable LobbyPack.AuthMenuMod.K_k=LobbyPack.AuthMenuMod-module.html#K_k,Variable LobbyPack.LobbyMod.K_k=LobbyPack.LobbyMod-module.html#K_k,Variable LobbyPack.MainMenuMod.K_k=LobbyPack.MainMenuMod-module.html#K_k,Variable LobbyPack.OptionsMenuMod.K_k=LobbyPack.OptionsMenuMod-module.html#K_k,Variable LobbyPack.StatsMenuMod.K_k=LobbyPack.StatsMenuMod-module.html#K_k"><a title="AppPack.AppMod.K_k
+GamePack.BombMod.K_k
+GamePack.GameMod.K_k
+GamePack.GameOverMod.K_k
+GamePack.InGameMod.K_k
+GamePack.InMenuMod.K_k
+GamePack.InMultMod.K_k
+GamePack.MapMod.K_k
+GamePack.MonsterMod.K_k
+GamePack.PlayerMod.K_k
+GamePack.SoundMod.K_k
+GamePack.TileMod.K_k
+GamePack.WinMod.K_k
+LobbyPack.AuthMenuMod.K_k
+LobbyPack.LobbyMod.K_k
+LobbyPack.MainMenuMod.K_k
+LobbyPack.OptionsMenuMod.K_k
+LobbyPack.StatsMenuMod.K_k" class="py-name" href="#" onclick="return doclink('link-24', 'K_k', 'link-24');">K_k</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedByString</tt> <tt class="py-op">=</tt> <tt class="py-string">"Number of Kills"</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByKills</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-25" class="py-name" targets="Variable AppPack.AppMod.K_d=AppPack.AppMod-module.html#K_d,Variable GamePack.BombMod.K_d=GamePack.BombMod-module.html#K_d,Variable GamePack.GameMod.K_d=GamePack.GameMod-module.html#K_d,Variable GamePack.GameOverMod.K_d=GamePack.GameOverMod-module.html#K_d,Variable GamePack.InGameMod.K_d=GamePack.InGameMod-module.html#K_d,Variable GamePack.InMenuMod.K_d=GamePack.InMenuMod-module.html#K_d,Variable GamePack.InMultMod.K_d=GamePack.InMultMod-module.html#K_d,Variable GamePack.MapMod.K_d=GamePack.MapMod-module.html#K_d,Variable GamePack.MonsterMod.K_d=GamePack.MonsterMod-module.html#K_d,Variable GamePack.PlayerMod.K_d=GamePack.PlayerMod-module.html#K_d,Variable GamePack.SoundMod.K_d=GamePack.SoundMod-module.html#K_d,Variable GamePack.TileMod.K_d=GamePack.TileMod-module.html#K_d,Variable GamePack.WinMod.K_d=GamePack.WinMod-module.html#K_d,Variable LobbyPack.AuthMenuMod.K_d=LobbyPack.AuthMenuMod-module.html#K_d,Variable LobbyPack.LobbyMod.K_d=LobbyPack.LobbyMod-module.html#K_d,Variable LobbyPack.MainMenuMod.K_d=LobbyPack.MainMenuMod-module.html#K_d,Variable LobbyPack.OptionsMenuMod.K_d=LobbyPack.OptionsMenuMod-module.html#K_d,Variable LobbyPack.StatsMenuMod.K_d=LobbyPack.StatsMenuMod-module.html#K_d"><a title="AppPack.AppMod.K_d
+GamePack.BombMod.K_d
+GamePack.GameMod.K_d
+GamePack.GameOverMod.K_d
+GamePack.InGameMod.K_d
+GamePack.InMenuMod.K_d
+GamePack.InMultMod.K_d
+GamePack.MapMod.K_d
+GamePack.MonsterMod.K_d
+GamePack.PlayerMod.K_d
+GamePack.SoundMod.K_d
+GamePack.TileMod.K_d
+GamePack.WinMod.K_d
+LobbyPack.AuthMenuMod.K_d
+LobbyPack.LobbyMod.K_d
+LobbyPack.MainMenuMod.K_d
+LobbyPack.OptionsMenuMod.K_d
+LobbyPack.StatsMenuMod.K_d" class="py-name" href="#" onclick="return doclink('link-25', 'K_d', 'link-25');">K_d</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedByString</tt> <tt class="py-op">=</tt> <tt class="py-string">"Number of Deaths"</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByDeaths</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-26" class="py-name" targets="Variable AppPack.AppMod.K_r=AppPack.AppMod-module.html#K_r,Variable GamePack.BombMod.K_r=GamePack.BombMod-module.html#K_r,Variable GamePack.GameMod.K_r=GamePack.GameMod-module.html#K_r,Variable GamePack.GameOverMod.K_r=GamePack.GameOverMod-module.html#K_r,Variable GamePack.InGameMod.K_r=GamePack.InGameMod-module.html#K_r,Variable GamePack.InMenuMod.K_r=GamePack.InMenuMod-module.html#K_r,Variable GamePack.InMultMod.K_r=GamePack.InMultMod-module.html#K_r,Variable GamePack.MapMod.K_r=GamePack.MapMod-module.html#K_r,Variable GamePack.MonsterMod.K_r=GamePack.MonsterMod-module.html#K_r,Variable GamePack.PlayerMod.K_r=GamePack.PlayerMod-module.html#K_r,Variable GamePack.SoundMod.K_r=GamePack.SoundMod-module.html#K_r,Variable GamePack.TileMod.K_r=GamePack.TileMod-module.html#K_r,Variable GamePack.WinMod.K_r=GamePack.WinMod-module.html#K_r,Variable LobbyPack.AuthMenuMod.K_r=LobbyPack.AuthMenuMod-module.html#K_r,Variable LobbyPack.LobbyMod.K_r=LobbyPack.LobbyMod-module.html#K_r,Variable LobbyPack.MainMenuMod.K_r=LobbyPack.MainMenuMod-module.html#K_r,Variable LobbyPack.OptionsMenuMod.K_r=LobbyPack.OptionsMenuMod-module.html#K_r,Variable LobbyPack.StatsMenuMod.K_r=LobbyPack.StatsMenuMod-module.html#K_r"><a title="AppPack.AppMod.K_r
+GamePack.BombMod.K_r
+GamePack.GameMod.K_r
+GamePack.GameOverMod.K_r
+GamePack.InGameMod.K_r
+GamePack.InMenuMod.K_r
+GamePack.InMultMod.K_r
+GamePack.MapMod.K_r
+GamePack.MonsterMod.K_r
+GamePack.PlayerMod.K_r
+GamePack.SoundMod.K_r
+GamePack.TileMod.K_r
+GamePack.WinMod.K_r
+LobbyPack.AuthMenuMod.K_r
+LobbyPack.LobbyMod.K_r
+LobbyPack.MainMenuMod.K_r
+LobbyPack.OptionsMenuMod.K_r
+LobbyPack.StatsMenuMod.K_r" class="py-name" href="#" onclick="return doclink('link-26', 'K_r', 'link-26');">K_r</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedByString</tt> <tt class="py-op">=</tt> <tt class="py-string">"KDR"</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByKDR</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt> <tt class="py-op">=</tt> <tt class="py-number">3</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-27" class="py-name" targets="Variable AppPack.AppMod.K_l=AppPack.AppMod-module.html#K_l,Variable GamePack.BombMod.K_l=GamePack.BombMod-module.html#K_l,Variable GamePack.GameMod.K_l=GamePack.GameMod-module.html#K_l,Variable GamePack.GameOverMod.K_l=GamePack.GameOverMod-module.html#K_l,Variable GamePack.InGameMod.K_l=GamePack.InGameMod-module.html#K_l,Variable GamePack.InMenuMod.K_l=GamePack.InMenuMod-module.html#K_l,Variable GamePack.InMultMod.K_l=GamePack.InMultMod-module.html#K_l,Variable GamePack.MapMod.K_l=GamePack.MapMod-module.html#K_l,Variable GamePack.MonsterMod.K_l=GamePack.MonsterMod-module.html#K_l,Variable GamePack.PlayerMod.K_l=GamePack.PlayerMod-module.html#K_l,Variable GamePack.SoundMod.K_l=GamePack.SoundMod-module.html#K_l,Variable GamePack.TileMod.K_l=GamePack.TileMod-module.html#K_l,Variable GamePack.WinMod.K_l=GamePack.WinMod-module.html#K_l,Variable LobbyPack.AuthMenuMod.K_l=LobbyPack.AuthMenuMod-module.html#K_l,Variable LobbyPack.LobbyMod.K_l=LobbyPack.LobbyMod-module.html#K_l,Variable LobbyPack.MainMenuMod.K_l=LobbyPack.MainMenuMod-module.html#K_l,Variable LobbyPack.OptionsMenuMod.K_l=LobbyPack.OptionsMenuMod-module.html#K_l,Variable LobbyPack.StatsMenuMod.K_l=LobbyPack.StatsMenuMod-module.html#K_l"><a title="AppPack.AppMod.K_l
+GamePack.BombMod.K_l
+GamePack.GameMod.K_l
+GamePack.GameOverMod.K_l
+GamePack.InGameMod.K_l
+GamePack.InMenuMod.K_l
+GamePack.InMultMod.K_l
+GamePack.MapMod.K_l
+GamePack.MonsterMod.K_l
+GamePack.PlayerMod.K_l
+GamePack.SoundMod.K_l
+GamePack.TileMod.K_l
+GamePack.WinMod.K_l
+LobbyPack.AuthMenuMod.K_l
+LobbyPack.LobbyMod.K_l
+LobbyPack.MainMenuMod.K_l
+LobbyPack.OptionsMenuMod.K_l
+LobbyPack.StatsMenuMod.K_l" class="py-name" href="#" onclick="return doclink('link-27', 'K_l', 'link-27');">K_l</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedByString</tt> <tt class="py-op">=</tt> <tt class="py-string">"Levels Completed"</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByLevelsCompleted</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt> <tt class="py-op">=</tt> <tt class="py-number">4</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-28" class="py-name" targets="Variable AppPack.AppMod.K_u=AppPack.AppMod-module.html#K_u,Variable GamePack.BombMod.K_u=GamePack.BombMod-module.html#K_u,Variable GamePack.GameMod.K_u=GamePack.GameMod-module.html#K_u,Variable GamePack.GameOverMod.K_u=GamePack.GameOverMod-module.html#K_u,Variable GamePack.InGameMod.K_u=GamePack.InGameMod-module.html#K_u,Variable GamePack.InMenuMod.K_u=GamePack.InMenuMod-module.html#K_u,Variable GamePack.InMultMod.K_u=GamePack.InMultMod-module.html#K_u,Variable GamePack.MapMod.K_u=GamePack.MapMod-module.html#K_u,Variable GamePack.MonsterMod.K_u=GamePack.MonsterMod-module.html#K_u,Variable GamePack.PlayerMod.K_u=GamePack.PlayerMod-module.html#K_u,Variable GamePack.SoundMod.K_u=GamePack.SoundMod-module.html#K_u,Variable GamePack.TileMod.K_u=GamePack.TileMod-module.html#K_u,Variable GamePack.WinMod.K_u=GamePack.WinMod-module.html#K_u,Variable LobbyPack.AuthMenuMod.K_u=LobbyPack.AuthMenuMod-module.html#K_u,Variable LobbyPack.LobbyMod.K_u=LobbyPack.LobbyMod-module.html#K_u,Variable LobbyPack.MainMenuMod.K_u=LobbyPack.MainMenuMod-module.html#K_u,Variable LobbyPack.OptionsMenuMod.K_u=LobbyPack.OptionsMenuMod-module.html#K_u,Variable LobbyPack.StatsMenuMod.K_u=LobbyPack.StatsMenuMod-module.html#K_u"><a title="AppPack.AppMod.K_u
+GamePack.BombMod.K_u
+GamePack.GameMod.K_u
+GamePack.GameOverMod.K_u
+GamePack.InGameMod.K_u
+GamePack.InMenuMod.K_u
+GamePack.InMultMod.K_u
+GamePack.MapMod.K_u
+GamePack.MonsterMod.K_u
+GamePack.PlayerMod.K_u
+GamePack.SoundMod.K_u
+GamePack.TileMod.K_u
+GamePack.WinMod.K_u
+LobbyPack.AuthMenuMod.K_u
+LobbyPack.LobbyMod.K_u
+LobbyPack.MainMenuMod.K_u
+LobbyPack.OptionsMenuMod.K_u
+LobbyPack.StatsMenuMod.K_u" class="py-name" href="#" onclick="return doclink('link-28', 'K_u', 'link-28');">K_u</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedByString</tt> <tt class="py-op">=</tt> <tt class="py-string">"Username"</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByUsername</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">                                 </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">                                <tt class="py-comment">#Navigate through highscores    </tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-29" class="py-name" targets="Variable AppPack.AppMod.K_UP=AppPack.AppMod-module.html#K_UP,Variable GamePack.BombMod.K_UP=GamePack.BombMod-module.html#K_UP,Variable GamePack.GameMod.K_UP=GamePack.GameMod-module.html#K_UP,Variable GamePack.GameOverMod.K_UP=GamePack.GameOverMod-module.html#K_UP,Variable GamePack.InGameMod.K_UP=GamePack.InGameMod-module.html#K_UP,Variable GamePack.InMenuMod.K_UP=GamePack.InMenuMod-module.html#K_UP,Variable GamePack.InMultMod.K_UP=GamePack.InMultMod-module.html#K_UP,Variable GamePack.MapMod.K_UP=GamePack.MapMod-module.html#K_UP,Variable GamePack.MonsterMod.K_UP=GamePack.MonsterMod-module.html#K_UP,Variable GamePack.PlayerMod.K_UP=GamePack.PlayerMod-module.html#K_UP,Variable GamePack.SoundMod.K_UP=GamePack.SoundMod-module.html#K_UP,Variable GamePack.TileMod.K_UP=GamePack.TileMod-module.html#K_UP,Variable GamePack.WinMod.K_UP=GamePack.WinMod-module.html#K_UP,Variable LobbyPack.AuthMenuMod.K_UP=LobbyPack.AuthMenuMod-module.html#K_UP,Variable LobbyPack.LobbyMod.K_UP=LobbyPack.LobbyMod-module.html#K_UP,Variable LobbyPack.MainMenuMod.K_UP=LobbyPack.MainMenuMod-module.html#K_UP,Variable LobbyPack.OptionsMenuMod.K_UP=LobbyPack.OptionsMenuMod-module.html#K_UP,Variable LobbyPack.StatsMenuMod.K_UP=LobbyPack.StatsMenuMod-module.html#K_UP"><a title="AppPack.AppMod.K_UP
+GamePack.BombMod.K_UP
+GamePack.GameMod.K_UP
+GamePack.GameOverMod.K_UP
+GamePack.InGameMod.K_UP
+GamePack.InMenuMod.K_UP
+GamePack.InMultMod.K_UP
+GamePack.MapMod.K_UP
+GamePack.MonsterMod.K_UP
+GamePack.PlayerMod.K_UP
+GamePack.SoundMod.K_UP
+GamePack.TileMod.K_UP
+GamePack.WinMod.K_UP
+LobbyPack.AuthMenuMod.K_UP
+LobbyPack.LobbyMod.K_UP
+LobbyPack.MainMenuMod.K_UP
+LobbyPack.OptionsMenuMod.K_UP
+LobbyPack.StatsMenuMod.K_UP" class="py-name" href="#" onclick="return doclink('link-29', 'K_UP', 'link-29');">K_UP</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-30" class="py-name" targets="Variable AppPack.AppMod.K_DOWN=AppPack.AppMod-module.html#K_DOWN,Variable GamePack.BombMod.K_DOWN=GamePack.BombMod-module.html#K_DOWN,Variable GamePack.GameMod.K_DOWN=GamePack.GameMod-module.html#K_DOWN,Variable GamePack.GameOverMod.K_DOWN=GamePack.GameOverMod-module.html#K_DOWN,Variable GamePack.InGameMod.K_DOWN=GamePack.InGameMod-module.html#K_DOWN,Variable GamePack.InMenuMod.K_DOWN=GamePack.InMenuMod-module.html#K_DOWN,Variable GamePack.InMultMod.K_DOWN=GamePack.InMultMod-module.html#K_DOWN,Variable GamePack.MapMod.K_DOWN=GamePack.MapMod-module.html#K_DOWN,Variable GamePack.MonsterMod.K_DOWN=GamePack.MonsterMod-module.html#K_DOWN,Variable GamePack.PlayerMod.K_DOWN=GamePack.PlayerMod-module.html#K_DOWN,Variable GamePack.SoundMod.K_DOWN=GamePack.SoundMod-module.html#K_DOWN,Variable GamePack.TileMod.K_DOWN=GamePack.TileMod-module.html#K_DOWN,Variable GamePack.WinMod.K_DOWN=GamePack.WinMod-module.html#K_DOWN,Variable LobbyPack.AuthMenuMod.K_DOWN=LobbyPack.AuthMenuMod-module.html#K_DOWN,Variable LobbyPack.LobbyMod.K_DOWN=LobbyPack.LobbyMod-module.html#K_DOWN,Variable LobbyPack.MainMenuMod.K_DOWN=LobbyPack.MainMenuMod-module.html#K_DOWN,Variable LobbyPack.OptionsMenuMod.K_DOWN=LobbyPack.OptionsMenuMod-module.html#K_DOWN,Variable LobbyPack.StatsMenuMod.K_DOWN=LobbyPack.StatsMenuMod-module.html#K_DOWN"><a title="AppPack.AppMod.K_DOWN
+GamePack.BombMod.K_DOWN
+GamePack.GameMod.K_DOWN
+GamePack.GameOverMod.K_DOWN
+GamePack.InGameMod.K_DOWN
+GamePack.InMenuMod.K_DOWN
+GamePack.InMultMod.K_DOWN
+GamePack.MapMod.K_DOWN
+GamePack.MonsterMod.K_DOWN
+GamePack.PlayerMod.K_DOWN
+GamePack.SoundMod.K_DOWN
+GamePack.TileMod.K_DOWN
+GamePack.WinMod.K_DOWN
+LobbyPack.AuthMenuMod.K_DOWN
+LobbyPack.LobbyMod.K_DOWN
+LobbyPack.MainMenuMod.K_DOWN
+LobbyPack.OptionsMenuMod.K_DOWN
+LobbyPack.StatsMenuMod.K_DOWN" class="py-name" href="#" onclick="return doclink('link-30', 'K_DOWN', 'link-30');">K_DOWN</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-number">10</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">                                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-31" class="py-name" targets="Variable AppPack.AppMod.K_LEFT=AppPack.AppMod-module.html#K_LEFT,Variable GamePack.BombMod.K_LEFT=GamePack.BombMod-module.html#K_LEFT,Variable GamePack.GameMod.K_LEFT=GamePack.GameMod-module.html#K_LEFT,Variable GamePack.GameOverMod.K_LEFT=GamePack.GameOverMod-module.html#K_LEFT,Variable GamePack.InGameMod.K_LEFT=GamePack.InGameMod-module.html#K_LEFT,Variable GamePack.InMenuMod.K_LEFT=GamePack.InMenuMod-module.html#K_LEFT,Variable GamePack.InMultMod.K_LEFT=GamePack.InMultMod-module.html#K_LEFT,Variable GamePack.MapMod.K_LEFT=GamePack.MapMod-module.html#K_LEFT,Variable GamePack.MonsterMod.K_LEFT=GamePack.MonsterMod-module.html#K_LEFT,Variable GamePack.PlayerMod.K_LEFT=GamePack.PlayerMod-module.html#K_LEFT,Variable GamePack.SoundMod.K_LEFT=GamePack.SoundMod-module.html#K_LEFT,Variable GamePack.TileMod.K_LEFT=GamePack.TileMod-module.html#K_LEFT,Variable GamePack.WinMod.K_LEFT=GamePack.WinMod-module.html#K_LEFT,Variable LobbyPack.AuthMenuMod.K_LEFT=LobbyPack.AuthMenuMod-module.html#K_LEFT,Variable LobbyPack.LobbyMod.K_LEFT=LobbyPack.LobbyMod-module.html#K_LEFT,Variable LobbyPack.MainMenuMod.K_LEFT=LobbyPack.MainMenuMod-module.html#K_LEFT,Variable LobbyPack.OptionsMenuMod.K_LEFT=LobbyPack.OptionsMenuMod-module.html#K_LEFT,Variable LobbyPack.StatsMenuMod.K_LEFT=LobbyPack.StatsMenuMod-module.html#K_LEFT"><a title="AppPack.AppMod.K_LEFT
+GamePack.BombMod.K_LEFT
+GamePack.GameMod.K_LEFT
+GamePack.GameOverMod.K_LEFT
+GamePack.InGameMod.K_LEFT
+GamePack.InMenuMod.K_LEFT
+GamePack.InMultMod.K_LEFT
+GamePack.MapMod.K_LEFT
+GamePack.MonsterMod.K_LEFT
+GamePack.PlayerMod.K_LEFT
+GamePack.SoundMod.K_LEFT
+GamePack.TileMod.K_LEFT
+GamePack.WinMod.K_LEFT
+LobbyPack.AuthMenuMod.K_LEFT
+LobbyPack.LobbyMod.K_LEFT
+LobbyPack.MainMenuMod.K_LEFT
+LobbyPack.OptionsMenuMod.K_LEFT
+LobbyPack.StatsMenuMod.K_LEFT" class="py-name" href="#" onclick="return doclink('link-31', 'K_LEFT', 'link-31');">K_LEFT</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">-</tt> <tt class="py-number">10</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">&lt;</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">                                <tt class="py-keyword">elif</tt> <tt class="py-name">event</tt><tt class="py-op">.</tt><tt class="py-name">key</tt> <tt class="py-op">==</tt> <tt id="link-32" class="py-name" targets="Variable AppPack.AppMod.K_RIGHT=AppPack.AppMod-module.html#K_RIGHT,Variable GamePack.BombMod.K_RIGHT=GamePack.BombMod-module.html#K_RIGHT,Variable GamePack.GameMod.K_RIGHT=GamePack.GameMod-module.html#K_RIGHT,Variable GamePack.GameOverMod.K_RIGHT=GamePack.GameOverMod-module.html#K_RIGHT,Variable GamePack.InGameMod.K_RIGHT=GamePack.InGameMod-module.html#K_RIGHT,Variable GamePack.InMenuMod.K_RIGHT=GamePack.InMenuMod-module.html#K_RIGHT,Variable GamePack.InMultMod.K_RIGHT=GamePack.InMultMod-module.html#K_RIGHT,Variable GamePack.MapMod.K_RIGHT=GamePack.MapMod-module.html#K_RIGHT,Variable GamePack.MonsterMod.K_RIGHT=GamePack.MonsterMod-module.html#K_RIGHT,Variable GamePack.PlayerMod.K_RIGHT=GamePack.PlayerMod-module.html#K_RIGHT,Variable GamePack.SoundMod.K_RIGHT=GamePack.SoundMod-module.html#K_RIGHT,Variable GamePack.TileMod.K_RIGHT=GamePack.TileMod-module.html#K_RIGHT,Variable GamePack.WinMod.K_RIGHT=GamePack.WinMod-module.html#K_RIGHT,Variable LobbyPack.AuthMenuMod.K_RIGHT=LobbyPack.AuthMenuMod-module.html#K_RIGHT,Variable LobbyPack.LobbyMod.K_RIGHT=LobbyPack.LobbyMod-module.html#K_RIGHT,Variable LobbyPack.MainMenuMod.K_RIGHT=LobbyPack.MainMenuMod-module.html#K_RIGHT,Variable LobbyPack.OptionsMenuMod.K_RIGHT=LobbyPack.OptionsMenuMod-module.html#K_RIGHT,Variable LobbyPack.StatsMenuMod.K_RIGHT=LobbyPack.StatsMenuMod-module.html#K_RIGHT"><a title="AppPack.AppMod.K_RIGHT
+GamePack.BombMod.K_RIGHT
+GamePack.GameMod.K_RIGHT
+GamePack.GameOverMod.K_RIGHT
+GamePack.InGameMod.K_RIGHT
+GamePack.InMenuMod.K_RIGHT
+GamePack.InMultMod.K_RIGHT
+GamePack.MapMod.K_RIGHT
+GamePack.MonsterMod.K_RIGHT
+GamePack.PlayerMod.K_RIGHT
+GamePack.SoundMod.K_RIGHT
+GamePack.TileMod.K_RIGHT
+GamePack.WinMod.K_RIGHT
+LobbyPack.AuthMenuMod.K_RIGHT
+LobbyPack.LobbyMod.K_RIGHT
+LobbyPack.MainMenuMod.K_RIGHT
+LobbyPack.OptionsMenuMod.K_RIGHT
+LobbyPack.StatsMenuMod.K_RIGHT" class="py-name" href="#" onclick="return doclink('link-32', 'K_RIGHT', 'link-32');">K_RIGHT</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">                                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">+</tt> <tt class="py-number">10</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">                                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">&gt;=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">                                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt><tt class="py-op">)</tt> <tt class="py-op">-</tt> <tt class="py-number">10</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+</div><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">                                 </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-string">                This method renders the menu according to the user input. It displays sorted data</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-string">                in accordance to kills, deaths, levels completed or KDR.</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu._render"></a><div id="StatsMenu._render-def"><a name="L130"></a><tt class="py-lineno">130</tt> <a class="py-toggle" href="#" id="StatsMenu._render-toggle" onclick="return toggle('StatsMenu._render');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#_render">_render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu._render-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu._render-expanded"><a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">                <tt class="py-comment">#Blit to screen</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method LobbyPack.StatsMenuMod.StatsMenu.__printTitle()=LobbyPack.StatsMenuMod.StatsMenu-class.html#__printTitle"><a title="LobbyPack.StatsMenuMod.StatsMenu.__printTitle" class="py-name" href="#" onclick="return doclink('link-33', '__printTitle', 'link-33');">__printTitle</a></tt><tt class="py-op">(</tt><tt class="py-string">"Highscores"</tt><tt class="py-op">,</tt><tt class="py-op">(</tt><tt class="py-number">270</tt><tt class="py-op">,</tt><tt class="py-number">40</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method LobbyPack.StatsMenuMod.StatsMenu.__printText()=LobbyPack.StatsMenuMod.StatsMenu-class.html#__printText"><a title="LobbyPack.StatsMenuMod.StatsMenu.__printText" class="py-name" href="#" onclick="return doclink('link-34', '__printText', 'link-34');">__printText</a></tt><tt class="py-op">(</tt><tt class="py-string">"Sort by:  U =&gt; Users, K =&gt; Kills, D =&gt; Deaths, R =&gt; KDR, L =&gt; Levels"</tt><tt class="py-op">,</tt><tt class="py-op">(</tt><tt class="py-number">10</tt><tt class="py-op">,</tt><tt class="py-number">580</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_userfont</tt><tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">Font</tt><tt class="py-op">(</tt><tt id="link-35" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-35', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.FONT_PATH=ConfigPack.ConfigMod.OtherConfigs-class.html#FONT_PATH"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_PATH" class="py-name" href="#" onclick="return doclink('link-36', 'FONT_PATH', 'link-36');">FONT_PATH</a></tt><tt class="py-op">,</tt><tt id="link-37" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-37', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.USER_FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#USER_FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.USER_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-38', 'USER_FONT_SIZE', 'link-38');">USER_FONT_SIZE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sortlist</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">]</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">5</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sortlist</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_userfont</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__categories</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-39" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-39', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_GRAY=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_GRAY"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_GRAY" class="py-name" href="#" onclick="return doclink('link-40', 'COLOR_GRAY', 'link-40');">COLOR_GRAY</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sortlist</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_userfont</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__categories</tt><tt class="py-op">[</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortindex</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-41" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-41', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_RED=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_RED"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_RED" class="py-name" href="#" onclick="return doclink('link-42', 'COLOR_RED', 'link-42');">COLOR_RED</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">range</tt><tt class="py-op">(</tt><tt class="py-number">5</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sortlist</tt><tt class="py-op">[</tt><tt class="py-name">i</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">115</tt><tt class="py-op">+</tt><tt class="py-number">120</tt><tt class="py-op">*</tt><tt class="py-name">i</tt><tt class="py-op">,</tt> <tt class="py-number">120</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name" targets="Method LobbyPack.StatsMenuMod.StatsMenu.__printTextRed()=LobbyPack.StatsMenuMod.StatsMenu-class.html#__printTextRed"><a title="LobbyPack.StatsMenuMod.StatsMenu.__printTextRed" class="py-name" href="#" onclick="return doclink('link-43', '__printTextRed', 'link-43');">__printTextRed</a></tt><tt class="py-op">(</tt><tt class="py-string">"ESC - Back to Main Menu"</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">10</tt><tt class="py-op">,</tt> <tt class="py-number">550</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">                <tt class="py-name">maxRange</tt> <tt class="py-op">=</tt> <tt class="py-number">10</tt> <tt class="py-op">+</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                <tt class="py-comment"># self.__printText("Sorted by " + self.__sortedByString, (40, 100))</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">                <tt class="py-name">__drawIdx</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">                <tt class="py-keyword">for</tt> <tt class="py-name">idx</tt><tt class="py-op">,</tt> <tt class="py-name">score</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">                        <tt class="py-name">__realIndex</tt> <tt class="py-op">=</tt> <tt class="py-name">idx</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">__realIndex</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__initRange</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">                                <tt class="py-name">__scoreString</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">__realIndex</tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">".       "</tt> <tt class="py-op">+</tt> <tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">                                <tt class="py-name">spaces1</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">15</tt><tt class="py-op">-</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                                        <tt class="py-name">spaces1</tt> <tt class="py-op">+=</tt> <tt class="py-string">" "</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">                                <tt class="py-name">__scoreString</tt> <tt class="py-op">+=</tt> <tt class="py-name">spaces1</tt> <tt class="py-op">+</tt> <tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">                                <tt class="py-name">spaces2</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">15</tt><tt class="py-op">-</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">                                        <tt class="py-name">spaces2</tt> <tt class="py-op">+=</tt> <tt class="py-string">" "</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">                                <tt class="py-name">__scoreString</tt> <tt class="py-op">+=</tt> <tt class="py-name">spaces2</tt> <tt class="py-op">+</tt> <tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">                                <tt class="py-name">spaces3</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">15</tt><tt class="py-op">-</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">2</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">                                        <tt class="py-name">spaces3</tt> <tt class="py-op">+=</tt> <tt class="py-string">" "</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">                                <tt class="py-name">kdr</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method FileManagementPack.DatabaseMod.HighscoreDatabase.getKDROf()=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html#getKDROf"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase.getKDROf" class="py-name" href="#" onclick="return doclink('link-44', 'getKDROf', 'link-44');">getKDROf</a></tt><tt class="py-op">(</tt><tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">                                <tt class="py-name">__scoreString</tt> <tt class="py-op">+=</tt> <tt class="py-name">spaces3</tt> <tt class="py-op">+</tt> <tt class="py-name">kdr</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">                                <tt class="py-name">spaces4</tt> <tt class="py-op">=</tt> <tt class="py-string">""</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">                                <tt class="py-keyword">for</tt> <tt class="py-name">i</tt> <tt class="py-keyword">in</tt> <tt class="py-name">xrange</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">15</tt><tt class="py-op">-</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">kdr</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">                                        <tt class="py-name">spaces4</tt> <tt class="py-op">+=</tt> <tt class="py-string">" "</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">                                <tt class="py-name">__scoreString</tt> <tt class="py-op">+=</tt> <tt class="py-name">spaces4</tt> <tt class="py-op">+</tt> <tt class="py-name">score</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name"><a title="LobbyPack.StatsMenuMod.StatsMenu.__printText" class="py-name" href="#" onclick="return doclink('link-45', '__printText', 'link-34');">__printText</a></tt><tt class="py-op">(</tt><tt class="py-name">__scoreString</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">50</tt><tt class="py-op">,</tt><tt class="py-number">110</tt><tt class="py-op">+</tt><tt class="py-number">35</tt><tt class="py-op">*</tt><tt class="py-name">__drawIdx</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line">                                <tt class="py-name">__drawIdx</tt> <tt class="py-op">=</tt> <tt class="py-name">__drawIdx</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">                                <tt class="py-keyword">if</tt><tt class="py-op">(</tt><tt class="py-name">__realIndex</tt> <tt class="py-op">==</tt> <tt class="py-name">maxRange</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line">                                        <tt class="py-keyword">break</tt> </tt>
+</div><a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-string">                This method loads the data from the database and stores it here in memory</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-string">                so we can display it appropriatly.</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu.__loadScoreData"></a><div id="StatsMenu.__loadScoreData-def"><a name="L197"></a><tt class="py-lineno">197</tt> <a class="py-toggle" href="#" id="StatsMenu.__loadScoreData-toggle" onclick="return toggle('StatsMenu.__loadScoreData');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#__loadScoreData">__loadScoreData</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt>               </tt>
+</div><a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByKills</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name" targets="Method FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByNumKills()=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html#getStatsByNumKills"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByNumKills" class="py-name" href="#" onclick="return doclink('link-46', 'getStatsByNumKills', 'link-46');">getStatsByNumKills</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByDeaths</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByNumDeaths()=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html#getStatsByNumDeaths"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByNumDeaths" class="py-name" href="#" onclick="return doclink('link-47', 'getStatsByNumDeaths', 'link-47');">getStatsByNumDeaths</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByKDR</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name" targets="Method FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByKDR()=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html#getStatsByKDR"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByKDR" class="py-name" href="#" onclick="return doclink('link-48', 'getStatsByKDR', 'link-48');">getStatsByKDR</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByLevelsCompleted</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Method FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByLevelsCompleted()=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html#getStatsByLevelsCompleted"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByLevelsCompleted" class="py-name" href="#" onclick="return doclink('link-49', 'getStatsByLevelsCompleted', 'link-49');">getStatsByLevelsCompleted</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByUsername</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__hs</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Method FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByUsername()=FileManagementPack.DatabaseMod.HighscoreDatabase-class.html#getStatsByUsername"><a title="FileManagementPack.DatabaseMod.HighscoreDatabase.getStatsByUsername" class="py-name" href="#" onclick="return doclink('link-50', 'getStatsByUsername', 'link-50');">getStatsByUsername</a></tt><tt class="py-op">(</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedByString</tt> <tt class="py-op">=</tt> <tt class="py-string">"Number of Kills"</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__sortedBy</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">__scoresByKills</tt> <tt class="py-comment"># Default</tt> </tt>
+</div><a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-string">                This method prints text black using usual font and SELECTED_FONT_SIZE.</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-string">                @param text is the text to be displayed.</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-string">                @param point is the point where the text should be rendered.</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu.__printTitle"></a><div id="StatsMenu.__printTitle-def"><a name="L212"></a><tt class="py-lineno">212</tt> <a class="py-toggle" href="#" id="StatsMenu.__printTitle-toggle" onclick="return toggle('StatsMenu.__printTitle');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#__printTitle">__printTitle</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">text</tt><tt class="py-op">,</tt><tt class="py-param">point</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu.__printTitle-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu.__printTitle-expanded"><a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-comment">#       font = pygame.font.SysFont("resources/fonts/Lucida Console",26)</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">                <tt class="py-name">font</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">Font</tt><tt class="py-op">(</tt><tt id="link-51" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-51', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_PATH" class="py-name" href="#" onclick="return doclink('link-52', 'FONT_PATH', 'link-36');">FONT_PATH</a></tt><tt class="py-op">,</tt><tt id="link-53" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-53', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-54" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.SELECTED_FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#SELECTED_FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.SELECTED_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-54', 'SELECTED_FONT_SIZE', 'link-54');">SELECTED_FONT_SIZE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-comment">#       font = pygame.font.SysFont(pygame.font.get_default_font(),26)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">                <tt class="py-comment">#font = pygame.font.Font(None,24)</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">                <tt class="py-name">label</tt> <tt class="py-op">=</tt> <tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-55" class="py-name" targets="Variable GamePack.GameOverMod.GameOver.MenuElement.text=GamePack.GameOverMod.GameOver.MenuElement-class.html#text,Variable GamePack.InMenuMod.InMenu.MenuElement.text=GamePack.InMenuMod.InMenu.MenuElement-class.html#text,Variable GamePack.WinMod.Win.MenuElement.text=GamePack.WinMod.Win.MenuElement-class.html#text,Variable LobbyPack.AuthMenuMod.AuthMenu.MenuElement.text=LobbyPack.AuthMenuMod.AuthMenu.MenuElement-class.html#text,Variable LobbyPack.MainMenuMod.MainMenu.MenuElement.text=LobbyPack.MainMenuMod.MainMenu.MenuElement-class.html#text,Variable LobbyPack.OptionsMenuMod.OptionsMenu.MenuElement.text=LobbyPack.OptionsMenuMod.OptionsMenu.MenuElement-class.html#text"><a title="GamePack.GameOverMod.GameOver.MenuElement.text
+GamePack.InMenuMod.InMenu.MenuElement.text
+GamePack.WinMod.Win.MenuElement.text
+LobbyPack.AuthMenuMod.AuthMenu.MenuElement.text
+LobbyPack.MainMenuMod.MainMenu.MenuElement.text
+LobbyPack.OptionsMenuMod.OptionsMenu.MenuElement.text" class="py-name" href="#" onclick="return doclink('link-55', 'text', 'link-55');">text</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">'  '</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-56" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-56', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_BLACK=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_BLACK"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_BLACK" class="py-name" href="#" onclick="return doclink('link-57', 'COLOR_BLACK', 'link-57');">COLOR_BLACK</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt> <tt class="py-op">=</tt> <tt class="py-name">label</tt><tt class="py-op">.</tt><tt class="py-name">get_rect</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt><tt class="py-op">.</tt><tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-name">point</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt><tt class="py-op">.</tt><tt class="py-name">y</tt> <tt class="py-op">=</tt> <tt class="py-name">point</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">label</tt><tt class="py-op">,</tt> <tt class="py-name">textRect</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"><tt class="py-string">                This method prints text black using usual font and USER_FONT_SIZE.</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-string">                @param text is the text to be displayed.</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-string">                @param point is the point where the text should be rendered.</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu.__printText"></a><div id="StatsMenu.__printText-def"><a name="L228"></a><tt class="py-lineno">228</tt> <a class="py-toggle" href="#" id="StatsMenu.__printText-toggle" onclick="return toggle('StatsMenu.__printText');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#__printText">__printText</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">text</tt><tt class="py-op">,</tt><tt class="py-param">point</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu.__printText-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu.__printText-expanded"><a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-comment">#       font = pygame.font.SysFont("resources/fonts/Lucida Console",26)</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">                <tt class="py-name">font</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">Font</tt><tt class="py-op">(</tt><tt id="link-58" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-58', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-59" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_PATH" class="py-name" href="#" onclick="return doclink('link-59', 'FONT_PATH', 'link-36');">FONT_PATH</a></tt><tt class="py-op">,</tt><tt id="link-60" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-60', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.USER_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-61', 'USER_FONT_SIZE', 'link-38');">USER_FONT_SIZE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-comment">#       font = pygame.font.SysFont(pygame.font.get_default_font(),26)</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">                <tt class="py-comment">#font = pygame.font.Font(None,24)</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">                <tt class="py-name">label</tt> <tt class="py-op">=</tt> <tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-62" class="py-name"><a title="GamePack.GameOverMod.GameOver.MenuElement.text
+GamePack.InMenuMod.InMenu.MenuElement.text
+GamePack.WinMod.Win.MenuElement.text
+LobbyPack.AuthMenuMod.AuthMenu.MenuElement.text
+LobbyPack.MainMenuMod.MainMenu.MenuElement.text
+LobbyPack.OptionsMenuMod.OptionsMenu.MenuElement.text" class="py-name" href="#" onclick="return doclink('link-62', 'text', 'link-55');">text</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">'  '</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-63" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-63', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_BLACK" class="py-name" href="#" onclick="return doclink('link-64', 'COLOR_BLACK', 'link-57');">COLOR_BLACK</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt> <tt class="py-op">=</tt> <tt class="py-name">label</tt><tt class="py-op">.</tt><tt class="py-name">get_rect</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt><tt class="py-op">.</tt><tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-name">point</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt><tt class="py-op">.</tt><tt class="py-name">y</tt> <tt class="py-op">=</tt> <tt class="py-name">point</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">label</tt><tt class="py-op">,</tt> <tt class="py-name">textRect</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"><tt class="py-string">                This method prints text red using usual font and USER_FONT_SIZE.</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-string"></tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"><tt class="py-string">                @param text is the text to be displayed.</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"><tt class="py-string">                @param point is the point where the text should be rendered.</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu.__printTextRed"></a><div id="StatsMenu.__printTextRed-def"><a name="L245"></a><tt class="py-lineno">245</tt> <a class="py-toggle" href="#" id="StatsMenu.__printTextRed-toggle" onclick="return toggle('StatsMenu.__printTextRed');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#__printTextRed">__printTextRed</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">text</tt><tt class="py-op">,</tt><tt class="py-param">point</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu.__printTextRed-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu.__printTextRed-expanded"><a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-comment">#       font = pygame.font.SysFont("resources/fonts/Lucida Console",26)</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">                <tt class="py-name">font</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">Font</tt><tt class="py-op">(</tt><tt id="link-65" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-65', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_PATH" class="py-name" href="#" onclick="return doclink('link-66', 'FONT_PATH', 'link-36');">FONT_PATH</a></tt><tt class="py-op">,</tt><tt id="link-67" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-67', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.USER_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-68', 'USER_FONT_SIZE', 'link-38');">USER_FONT_SIZE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-comment">#       font = pygame.font.SysFont(pygame.font.get_default_font(),26)</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">                <tt class="py-comment">#font = pygame.font.Font(None,24)</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">                <tt class="py-name">label</tt> <tt class="py-op">=</tt> <tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt id="link-69" class="py-name"><a title="GamePack.GameOverMod.GameOver.MenuElement.text
+GamePack.InMenuMod.InMenu.MenuElement.text
+GamePack.WinMod.Win.MenuElement.text
+LobbyPack.AuthMenuMod.AuthMenu.MenuElement.text
+LobbyPack.MainMenuMod.MainMenu.MenuElement.text
+LobbyPack.OptionsMenuMod.OptionsMenu.MenuElement.text" class="py-name" href="#" onclick="return doclink('link-69', 'text', 'link-55');">text</a></tt><tt class="py-op">)</tt><tt class="py-op">+</tt><tt class="py-string">'  '</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-70" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-70', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_RED" class="py-name" href="#" onclick="return doclink('link-71', 'COLOR_RED', 'link-42');">COLOR_RED</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt> <tt class="py-op">=</tt> <tt class="py-name">label</tt><tt class="py-op">.</tt><tt class="py-name">get_rect</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt><tt class="py-op">.</tt><tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-name">point</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">                <tt class="py-name">textRect</tt><tt class="py-op">.</tt><tt class="py-name">y</tt> <tt class="py-op">=</tt> <tt class="py-name">point</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">label</tt><tt class="py-op">,</tt> <tt class="py-name">textRect</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-string">                This method clears the background.</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="StatsMenu.clearBackground"></a><div id="StatsMenu.clearBackground-def"><a name="L259"></a><tt class="py-lineno">259</tt> <a class="py-toggle" href="#" id="StatsMenu.clearBackground-toggle" onclick="return toggle('StatsMenu.clearBackground');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="LobbyPack.StatsMenuMod.StatsMenu-class.html#clearBackground">clearBackground</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StatsMenu.clearBackground-collapsed" style="display:none;" pad="+++" indent="++++++++++++"></div><div id="StatsMenu.clearBackground-expanded"><a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">                <tt class="py-name">bg</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name" targets="Class pygame.Surface=pygame.Surface-class.html"><a title="pygame.Surface" class="py-name" href="#" onclick="return doclink('link-72', 'Surface', 'link-72');">Surface</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">get_size</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">                <tt class="py-name">bg</tt> <tt class="py-op">=</tt> <tt class="py-name">bg</tt><tt class="py-op">.</tt><tt class="py-name">convert</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line">                <tt class="py-name">bg</tt><tt class="py-op">.</tt><tt class="py-name">fill</tt><tt class="py-op">(</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">bg</tt><tt class="py-op">,</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Apr 13 10:42:05 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

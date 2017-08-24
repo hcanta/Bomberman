@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>ConfigPack.ConfigMod</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="ConfigPack-module.html">Package&nbsp;ConfigPack</a> ::
+        Module&nbsp;ConfigMod
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="ConfigPack.ConfigMod-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="ConfigPack.ConfigMod-module.html">Module ConfigPack.ConfigMod</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"> </tt>
+<a name="AppConfigs"></a><div id="AppConfigs-def"><a name="L3"></a><tt class="py-lineno"> 3</tt> <a class="py-toggle" href="#" id="AppConfigs-toggle" onclick="return toggle('AppConfigs');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="ConfigPack.ConfigMod.AppConfigs-class.html">AppConfigs</a><tt class="py-op">:</tt> </tt>
+</div><div id="AppConfigs-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="AppConfigs-expanded"><a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line">        <tt class="py-comment">#Window Configs</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">        <tt id="link-0" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.WINDOWNAME=ConfigPack.ConfigMod.AppConfigs-class.html#WINDOWNAME"><a title="ConfigPack.ConfigMod.AppConfigs.WINDOWNAME" class="py-name" href="#" onclick="return doclink('link-0', 'WINDOWNAME', 'link-0');">WINDOWNAME</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Hai Bomb"</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">        <tt id="link-1" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.WINDOWSIZE=ConfigPack.ConfigMod.AppConfigs-class.html#WINDOWSIZE"><a title="ConfigPack.ConfigMod.AppConfigs.WINDOWSIZE" class="py-name" href="#" onclick="return doclink('link-1', 'WINDOWSIZE', 'link-1');">WINDOWSIZE</a></tt> <tt class="py-op">=</tt> <tt id="link-2" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.WINDOWX=ConfigPack.ConfigMod.AppConfigs-class.html#WINDOWX"><a title="ConfigPack.ConfigMod.AppConfigs.WINDOWX" class="py-name" href="#" onclick="return doclink('link-2', 'WINDOWX', 'link-2');">WINDOWX</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.WINDOWY=ConfigPack.ConfigMod.AppConfigs-class.html#WINDOWY"><a title="ConfigPack.ConfigMod.AppConfigs.WINDOWY" class="py-name" href="#" onclick="return doclink('link-3', 'WINDOWY', 'link-3');">WINDOWY</a></tt> <tt class="py-op">=</tt> <tt class="py-number">800</tt><tt class="py-op">,</tt><tt class="py-number">600</tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-comment">#Render Configs</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt id="link-4" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.FPS=ConfigPack.ConfigMod.AppConfigs-class.html#FPS"><a title="ConfigPack.ConfigMod.AppConfigs.FPS" class="py-name" href="#" onclick="return doclink('link-4', 'FPS', 'link-4');">FPS</a></tt> <tt class="py-op">=</tt> <tt class="py-number">30</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">        <tt class="py-comment">#State Configs</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">        <tt id="link-5" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.STATE_LOBBY=ConfigPack.ConfigMod.AppConfigs-class.html#STATE_LOBBY"><a title="ConfigPack.ConfigMod.AppConfigs.STATE_LOBBY" class="py-name" href="#" onclick="return doclink('link-5', 'STATE_LOBBY', 'link-5');">STATE_LOBBY</a></tt> <tt class="py-op">=</tt> <tt class="py-number">40</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">        <tt id="link-6" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.STATE_GAME=ConfigPack.ConfigMod.AppConfigs-class.html#STATE_GAME"><a title="ConfigPack.ConfigMod.AppConfigs.STATE_GAME" class="py-name" href="#" onclick="return doclink('link-6', 'STATE_GAME', 'link-6');">STATE_GAME</a></tt> <tt class="py-op">=</tt> <tt class="py-number">50</tt> </tt>
+</div><a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line"> </tt>
+<a name="SubstateConfigs"></a><div id="SubstateConfigs-def"><a name="L16"></a><tt class="py-lineno">16</tt> <a class="py-toggle" href="#" id="SubstateConfigs-toggle" onclick="return toggle('SubstateConfigs');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="ConfigPack.ConfigMod.SubstateConfigs-class.html">SubstateConfigs</a><tt class="py-op">:</tt> </tt>
+</div><div id="SubstateConfigs-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="SubstateConfigs-expanded"><a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">        <tt class="py-comment">#Substate Configs</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt id="link-7" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INGAME=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INGAME"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INGAME" class="py-name" href="#" onclick="return doclink('link-7', 'SUBSTATE_INGAME', 'link-7');">SUBSTATE_INGAME</a></tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">        <tt id="link-8" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMENU" class="py-name" href="#" onclick="return doclink('link-8', 'SUBSTATE_INMENU', 'link-8');">SUBSTATE_INMENU</a></tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">        <tt id="link-9" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULT=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INMULT"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULT" class="py-name" href="#" onclick="return doclink('link-9', 'SUBSTATE_INMULT', 'link-9');">SUBSTATE_INMULT</a></tt> <tt class="py-op">=</tt> <tt class="py-number">2</tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">        <tt id="link-10" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULTALT=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INMULTALT"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULTALT" class="py-name" href="#" onclick="return doclink('link-10', 'SUBSTATE_INMULTALT', 'link-10');">SUBSTATE_INMULTALT</a></tt> <tt class="py-op">=</tt> <tt class="py-number">3</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">        <tt id="link-11" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_AUTHMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_AUTHMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_AUTHMENU" class="py-name" href="#" onclick="return doclink('link-11', 'SUBSTATE_AUTHMENU', 'link-11');">SUBSTATE_AUTHMENU</a></tt> <tt class="py-op">=</tt> <tt class="py-number">4</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt id="link-12" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_MAINMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_MAINMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_MAINMENU" class="py-name" href="#" onclick="return doclink('link-12', 'SUBSTATE_MAINMENU', 'link-12');">SUBSTATE_MAINMENU</a></tt> <tt class="py-op">=</tt> <tt class="py-number">5</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt id="link-13" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_OPTIONSMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_OPTIONSMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_OPTIONSMENU" class="py-name" href="#" onclick="return doclink('link-13', 'SUBSTATE_OPTIONSMENU', 'link-13');">SUBSTATE_OPTIONSMENU</a></tt> <tt class="py-op">=</tt> <tt class="py-number">6</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">        <tt id="link-14" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_STATSMENU=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_STATSMENU"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_STATSMENU" class="py-name" href="#" onclick="return doclink('link-14', 'SUBSTATE_STATSMENU', 'link-14');">SUBSTATE_STATSMENU</a></tt> <tt class="py-op">=</tt> <tt class="py-number">7</tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt id="link-15" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_RESTART=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_RESTART"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_RESTART" class="py-name" href="#" onclick="return doclink('link-15', 'SUBSTATE_RESTART', 'link-15');">SUBSTATE_RESTART</a></tt> <tt class="py-op">=</tt> <tt class="py-number">8</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">        <tt id="link-16" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_BACK=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_BACK"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_BACK" class="py-name" href="#" onclick="return doclink('link-16', 'SUBSTATE_BACK', 'link-16');">SUBSTATE_BACK</a></tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">        <tt id="link-17" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_GAMEOVER=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_GAMEOVER"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_GAMEOVER" class="py-name" href="#" onclick="return doclink('link-17', 'SUBSTATE_GAMEOVER', 'link-17');">SUBSTATE_GAMEOVER</a></tt> <tt class="py-op">=</tt> <tt class="py-number">20</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">        <tt id="link-18" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_WIN=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_WIN"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_WIN" class="py-name" href="#" onclick="return doclink('link-18', 'SUBSTATE_WIN', 'link-18');">SUBSTATE_WIN</a></tt> <tt class="py-op">=</tt> <tt class="py-number">60</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">        <tt id="link-19" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_UNDEFINED=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_UNDEFINED"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_UNDEFINED" class="py-name" href="#" onclick="return doclink('link-19', 'SUBSTATE_UNDEFINED', 'link-19');">SUBSTATE_UNDEFINED</a></tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">10</tt> <tt class="py-comment">#For initialization problems</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="GameConfigs"></a><div id="GameConfigs-def"><a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="GameConfigs-toggle" onclick="return toggle('GameConfigs');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="ConfigPack.ConfigMod.GameConfigs-class.html">GameConfigs</a><tt class="py-op">:</tt> </tt>
+</div><div id="GameConfigs-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="GameConfigs-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt id="link-20" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.EMPTY=ConfigPack.ConfigMod.GameConfigs-class.html#EMPTY"><a title="ConfigPack.ConfigMod.GameConfigs.EMPTY" class="py-name" href="#" onclick="return doclink('link-20', 'EMPTY', 'link-20');">EMPTY</a></tt> <tt class="py-op">=</tt><tt class="py-string">"0"</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">        <tt id="link-21" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.EMPTY_CRATE=ConfigPack.ConfigMod.GameConfigs-class.html#EMPTY_CRATE"><a title="ConfigPack.ConfigMod.GameConfigs.EMPTY_CRATE" class="py-name" href="#" onclick="return doclink('link-21', 'EMPTY_CRATE', 'link-21');">EMPTY_CRATE</a></tt> <tt class="py-op">=</tt><tt class="py-string">"E"</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">        <tt id="link-22" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.WALL=ConfigPack.ConfigMod.GameConfigs-class.html#WALL"><a title="ConfigPack.ConfigMod.GameConfigs.WALL" class="py-name" href="#" onclick="return doclink('link-22', 'WALL', 'link-22');">WALL</a></tt> <tt class="py-op">=</tt><tt class="py-string">"W"</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">        <tt id="link-23" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.BOMB=ConfigPack.ConfigMod.GameConfigs-class.html#BOMB"><a title="ConfigPack.ConfigMod.GameConfigs.BOMB" class="py-name" href="#" onclick="return doclink('link-23', 'BOMB', 'link-23');">BOMB</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"B"</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">        <tt id="link-24" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.BONUS0=ConfigPack.ConfigMod.GameConfigs-class.html#BONUS0"><a title="ConfigPack.ConfigMod.GameConfigs.BONUS0" class="py-name" href="#" onclick="return doclink('link-24', 'BONUS0', 'link-24');">BONUS0</a></tt> <tt class="py-op">=</tt><tt class="py-string">"B0"</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">        <tt id="link-25" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.BONUS1=ConfigPack.ConfigMod.GameConfigs-class.html#BONUS1"><a title="ConfigPack.ConfigMod.GameConfigs.BONUS1" class="py-name" href="#" onclick="return doclink('link-25', 'BONUS1', 'link-25');">BONUS1</a></tt> <tt class="py-op">=</tt><tt class="py-string">"B1"</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt id="link-26" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.BONUS2=ConfigPack.ConfigMod.GameConfigs-class.html#BONUS2"><a title="ConfigPack.ConfigMod.GameConfigs.BONUS2" class="py-name" href="#" onclick="return doclink('link-26', 'BONUS2', 'link-26');">BONUS2</a></tt> <tt class="py-op">=</tt><tt class="py-string">"B2"</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line">        <tt id="link-27" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.EXIT=ConfigPack.ConfigMod.GameConfigs-class.html#EXIT"><a title="ConfigPack.ConfigMod.GameConfigs.EXIT" class="py-name" href="#" onclick="return doclink('link-27', 'EXIT', 'link-27');">EXIT</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Ex"</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">        <tt id="link-28" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.MONSTER0=ConfigPack.ConfigMod.GameConfigs-class.html#MONSTER0"><a title="ConfigPack.ConfigMod.GameConfigs.MONSTER0" class="py-name" href="#" onclick="return doclink('link-28', 'MONSTER0', 'link-28');">MONSTER0</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"M0"</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">        <tt id="link-29" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.MONSTER1=ConfigPack.ConfigMod.GameConfigs-class.html#MONSTER1"><a title="ConfigPack.ConfigMod.GameConfigs.MONSTER1" class="py-name" href="#" onclick="return doclink('link-29', 'MONSTER1', 'link-29');">MONSTER1</a></tt><tt class="py-op">=</tt> <tt class="py-string">"M1"</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">        <tt id="link-30" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.MONSTER2=ConfigPack.ConfigMod.GameConfigs-class.html#MONSTER2"><a title="ConfigPack.ConfigMod.GameConfigs.MONSTER2" class="py-name" href="#" onclick="return doclink('link-30', 'MONSTER2', 'link-30');">MONSTER2</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"M2"</tt> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">        <tt id="link-31" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.MONSTER3=ConfigPack.ConfigMod.GameConfigs-class.html#MONSTER3"><a title="ConfigPack.ConfigMod.GameConfigs.MONSTER3" class="py-name" href="#" onclick="return doclink('link-31', 'MONSTER3', 'link-31');">MONSTER3</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"M3"</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt id="link-32" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.TILE_RESOLUTION=ConfigPack.ConfigMod.GameConfigs-class.html#TILE_RESOLUTION"><a title="ConfigPack.ConfigMod.GameConfigs.TILE_RESOLUTION" class="py-name" href="#" onclick="return doclink('link-32', 'TILE_RESOLUTION', 'link-32');">TILE_RESOLUTION</a></tt> <tt class="py-op">=</tt> <tt class="py-number">40</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line">        <tt id="link-33" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.BOARD_SIZE=ConfigPack.ConfigMod.GameConfigs-class.html#BOARD_SIZE"><a title="ConfigPack.ConfigMod.GameConfigs.BOARD_SIZE" class="py-name" href="#" onclick="return doclink('link-33', 'BOARD_SIZE', 'link-33');">BOARD_SIZE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">14</tt> </tt>
+</div><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"> </tt>
+<a name="FMConfigs"></a><div id="FMConfigs-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="FMConfigs-toggle" onclick="return toggle('FMConfigs');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="ConfigPack.ConfigMod.FMConfigs-class.html">FMConfigs</a><tt class="py-op">:</tt> </tt>
+</div><div id="FMConfigs-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="FMConfigs-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">        <tt class="py-comment">#Crypto </tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt id="link-34" class="py-name" targets="Variable ConfigPack.ConfigMod.FMConfigs.CAESARCONSTANT=ConfigPack.ConfigMod.FMConfigs-class.html#CAESARCONSTANT"><a title="ConfigPack.ConfigMod.FMConfigs.CAESARCONSTANT" class="py-name" href="#" onclick="return doclink('link-34', 'CAESARCONSTANT', 'link-34');">CAESARCONSTANT</a></tt> <tt class="py-op">=</tt> <tt class="py-number">5</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">        <tt class="py-comment">#file path</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line">        <tt id="link-35" class="py-name" targets="Variable ConfigPack.ConfigMod.FMConfigs.PATH=ConfigPack.ConfigMod.FMConfigs-class.html#PATH"><a title="ConfigPack.ConfigMod.FMConfigs.PATH" class="py-name" href="#" onclick="return doclink('link-35', 'PATH', 'link-35');">PATH</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"Data"</tt> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt id="link-36" class="py-name" targets="Variable ConfigPack.ConfigMod.FMConfigs.CREDENTIALS=ConfigPack.ConfigMod.FMConfigs-class.html#CREDENTIALS"><a title="ConfigPack.ConfigMod.FMConfigs.CREDENTIALS" class="py-name" href="#" onclick="return doclink('link-36', 'CREDENTIALS', 'link-36');">CREDENTIALS</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt id="link-37" class="py-name"><a title="ConfigPack.ConfigMod.FMConfigs.PATH" class="py-name" href="#" onclick="return doclink('link-37', 'PATH', 'link-35');">PATH</a></tt><tt class="py-op">,</tt> <tt class="py-string">"credentials.txt"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">        <tt id="link-38" class="py-name" targets="Variable ConfigPack.ConfigMod.FMConfigs.STATISTICS=ConfigPack.ConfigMod.FMConfigs-class.html#STATISTICS"><a title="ConfigPack.ConfigMod.FMConfigs.STATISTICS" class="py-name" href="#" onclick="return doclink('link-38', 'STATISTICS', 'link-38');">STATISTICS</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="ConfigPack.ConfigMod.FMConfigs.PATH" class="py-name" href="#" onclick="return doclink('link-39', 'PATH', 'link-35');">PATH</a></tt><tt class="py-op">,</tt> <tt class="py-string">"statistics.txt"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">        <tt id="link-40" class="py-name" targets="Variable ConfigPack.ConfigMod.FMConfigs.MAPS=ConfigPack.ConfigMod.FMConfigs-class.html#MAPS"><a title="ConfigPack.ConfigMod.FMConfigs.MAPS" class="py-name" href="#" onclick="return doclink('link-40', 'MAPS', 'link-40');">MAPS</a></tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">abspath</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt id="link-41" class="py-name"><a title="ConfigPack.ConfigMod.FMConfigs.PATH" class="py-name" href="#" onclick="return doclink('link-41', 'PATH', 'link-35');">PATH</a></tt><tt class="py-op">,</tt> <tt class="py-string">"maps.txt"</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line"> </tt>
+<a name="OtherConfigs"></a><div id="OtherConfigs-def"><a name="L59"></a><tt class="py-lineno">59</tt> <a class="py-toggle" href="#" id="OtherConfigs-toggle" onclick="return toggle('OtherConfigs');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="ConfigPack.ConfigMod.OtherConfigs-class.html">OtherConfigs</a><tt class="py-op">:</tt> </tt>
+</div><div id="OtherConfigs-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="OtherConfigs-expanded"><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-comment">#Color Configs</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line">        <tt id="link-42" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_GRAY=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_GRAY"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_GRAY" class="py-name" href="#" onclick="return doclink('link-42', 'COLOR_GRAY', 'link-42');">COLOR_GRAY</a></tt>     <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">100</tt><tt class="py-op">,</tt> <tt class="py-number">100</tt><tt class="py-op">,</tt> <tt class="py-number">100</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">        <tt id="link-43" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_NAVYBLUE=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_NAVYBLUE"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_NAVYBLUE" class="py-name" href="#" onclick="return doclink('link-43', 'COLOR_NAVYBLUE', 'link-43');">COLOR_NAVYBLUE</a></tt> <tt class="py-op">=</tt> <tt class="py-op">(</tt> <tt class="py-number">60</tt><tt class="py-op">,</tt>  <tt class="py-number">60</tt><tt class="py-op">,</tt> <tt class="py-number">100</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">        <tt id="link-44" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_WHITE=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_WHITE"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_WHITE" class="py-name" href="#" onclick="return doclink('link-44', 'COLOR_WHITE', 'link-44');">COLOR_WHITE</a></tt>    <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">255</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">        <tt id="link-45" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_RED=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_RED"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_RED" class="py-name" href="#" onclick="return doclink('link-45', 'COLOR_RED', 'link-45');">COLOR_RED</a></tt>      <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">255</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line">        <tt id="link-46" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_GREEN=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_GREEN"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_GREEN" class="py-name" href="#" onclick="return doclink('link-46', 'COLOR_GREEN', 'link-46');">COLOR_GREEN</a></tt>    <tt class="py-op">=</tt> <tt class="py-op">(</tt>      <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt id="link-47" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_BLUE=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_BLUE"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_BLUE" class="py-name" href="#" onclick="return doclink('link-47', 'COLOR_BLUE', 'link-47');">COLOR_BLUE</a></tt>     <tt class="py-op">=</tt> <tt class="py-op">(</tt>  <tt class="py-number">0</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">        <tt id="link-48" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_YELLOW=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_YELLOW"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_YELLOW" class="py-name" href="#" onclick="return doclink('link-48', 'COLOR_YELLOW', 'link-48');">COLOR_YELLOW</a></tt>   <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">255</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">        <tt id="link-49" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_ORANGE=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_ORANGE"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_ORANGE" class="py-name" href="#" onclick="return doclink('link-49', 'COLOR_ORANGE', 'link-49');">COLOR_ORANGE</a></tt>   <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">255</tt><tt class="py-op">,</tt> <tt class="py-number">128</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line">        <tt id="link-50" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_PURPLE=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_PURPLE"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_PURPLE" class="py-name" href="#" onclick="return doclink('link-50', 'COLOR_PURPLE', 'link-50');">COLOR_PURPLE</a></tt>   <tt class="py-op">=</tt> <tt class="py-op">(</tt><tt class="py-number">255</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">        <tt id="link-51" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_CYAN=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_CYAN"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_CYAN" class="py-name" href="#" onclick="return doclink('link-51', 'COLOR_CYAN', 'link-51');">COLOR_CYAN</a></tt>     <tt class="py-op">=</tt> <tt class="py-op">(</tt>  <tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">,</tt> <tt class="py-number">255</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">        <tt id="link-52" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_BLACK=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_BLACK"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_BLACK" class="py-name" href="#" onclick="return doclink('link-52', 'COLOR_BLACK', 'link-52');">COLOR_BLACK</a></tt>    <tt class="py-op">=</tt> <tt class="py-op">(</tt>  <tt class="py-number">0</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">,</tt>   <tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">        <tt class="py-comment">#Font Configs</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">        <tt id="link-53" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-53', 'FONT_SIZE', 'link-53');">FONT_SIZE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">50</tt> </tt>
+<a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line">        <tt id="link-54" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.SELECTED_FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#SELECTED_FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.SELECTED_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-54', 'SELECTED_FONT_SIZE', 'link-54');">SELECTED_FONT_SIZE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">70</tt> </tt>
+<a name="L77"></a><tt class="py-lineno">77</tt>  <tt class="py-line">        <tt id="link-55" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.USER_FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#USER_FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.USER_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-55', 'USER_FONT_SIZE', 'link-55');">USER_FONT_SIZE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">20</tt> </tt>
+<a name="L78"></a><tt class="py-lineno">78</tt>  <tt class="py-line">        <tt id="link-56" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.STATS_FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#STATS_FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.STATS_FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-56', 'STATS_FONT_SIZE', 'link-56');">STATS_FONT_SIZE</a></tt> <tt class="py-op">=</tt> <tt class="py-number">30</tt> </tt>
+<a name="L79"></a><tt class="py-lineno">79</tt>  <tt class="py-line">        <tt id="link-57" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.FONT_PATH=ConfigPack.ConfigMod.OtherConfigs-class.html#FONT_PATH"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_PATH" class="py-name" href="#" onclick="return doclink('link-57', 'FONT_PATH', 'link-57');">FONT_PATH</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'Fonts/coders_crux.ttf'</tt> </tt>
+</div><a name="L80"></a><tt class="py-lineno">80</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Apr 13 10:42:07 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

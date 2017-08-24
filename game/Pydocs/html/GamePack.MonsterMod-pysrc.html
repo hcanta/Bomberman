@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>GamePack.MonsterMod</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="GamePack-module.html">Package&nbsp;GamePack</a> ::
+        Module&nbsp;MonsterMod
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="GamePack.MonsterMod-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="GamePack.MonsterMod-module.html">Module GamePack.MonsterMod</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">random</tt><tt class="py-op">,</tt><tt class="py-name">sys</tt><tt class="py-op">,</tt><tt class="py-name">os</tt><tt class="py-op">,</tt><tt class="py-name">imghdr</tt><tt class="py-op">,</tt><tt class="py-name">pygame</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package ConfigPack=ConfigPack-module.html"><a title="ConfigPack" class="py-name" href="#" onclick="return doclink('link-0', 'ConfigPack', 'link-0');">ConfigPack</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module ConfigPack.ConfigMod=ConfigPack.ConfigMod-module.html"><a title="ConfigPack.ConfigMod" class="py-name" href="#" onclick="return doclink('link-1', 'ConfigMod', 'link-1');">ConfigMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class ConfigPack.ConfigMod.AppConfigs=ConfigPack.ConfigMod.AppConfigs-class.html"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-2', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class ConfigPack.ConfigMod.GameConfigs=ConfigPack.ConfigMod.GameConfigs-class.html"><a title="ConfigPack.ConfigMod.GameConfigs" class="py-name" href="#" onclick="return doclink('link-3', 'GameConfigs', 'link-3');">GameConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class ConfigPack.ConfigMod.OtherConfigs=ConfigPack.ConfigMod.OtherConfigs-class.html"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-4', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">pygame</tt> <tt class="py-keyword">import</tt><tt class="py-op">*</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"> </tt>
+<a name="Monster"></a><div id="Monster-def"><a name="L6"></a><tt class="py-lineno"> 6</tt> <a class="py-toggle" href="#" id="Monster-toggle" onclick="return toggle('Monster');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html">Monster</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Monster-expanded"><a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line">         </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-docstring">        Constructor for the Monster object</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="Monster.__init__"></a><div id="Monster.__init__-def"><a name="L11"></a><tt class="py-lineno">11</tt> <a class="py-toggle" href="#" id="Monster.__init__-toggle" onclick="return toggle('Monster.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">typeId</tt><tt class="py-op">,</tt> <tt class="py-param">tileID</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster.__init__-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster.__init__-expanded"><a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_lives</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_x</tt> <tt class="py-op">=</tt> <tt class="py-name">tileID</tt> <tt class="py-op">%</tt> <tt id="link-5" class="py-name"><a title="ConfigPack.ConfigMod.GameConfigs" class="py-name" href="#" onclick="return doclink('link-5', 'GameConfigs', 'link-3');">GameConfigs</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Variable ConfigPack.ConfigMod.GameConfigs.BOARD_SIZE=ConfigPack.ConfigMod.GameConfigs-class.html#BOARD_SIZE"><a title="ConfigPack.ConfigMod.GameConfigs.BOARD_SIZE" class="py-name" href="#" onclick="return doclink('link-6', 'BOARD_SIZE', 'link-6');">BOARD_SIZE</a></tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_y</tt> <tt class="py-op">=</tt>  <tt class="py-name">tileID</tt> <tt class="py-op">/</tt> <tt id="link-7" class="py-name"><a title="ConfigPack.ConfigMod.GameConfigs" class="py-name" href="#" onclick="return doclink('link-7', 'GameConfigs', 'link-3');">GameConfigs</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="ConfigPack.ConfigMod.GameConfigs.BOARD_SIZE" class="py-name" href="#" onclick="return doclink('link-8', 'BOARD_SIZE', 'link-6');">BOARD_SIZE</a></tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_movePulse</tt> <tt class="py-op">=</tt> <tt class="py-number">12</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tileID</tt> <tt class="py-op">=</tt> <tt class="py-name">tileID</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_typeID</tt> <tt class="py-op">=</tt> <tt class="py-name">typeId</tt> </tt>
+</div><a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">        <tt class="py-string">""" </tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line"><tt class="py-string">        returns the type of the monster, the type identify what color or shape the monster is.</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Monster._getTypeID"></a><div id="Monster._getTypeID-def"><a name="L22"></a><tt class="py-lineno">22</tt> <a class="py-toggle" href="#" id="Monster._getTypeID-toggle" onclick="return toggle('Monster._getTypeID');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_getTypeID">_getTypeID</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._getTypeID-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._getTypeID-expanded"><a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_typeID</tt> </tt>
+</div><a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line"><tt class="py-string">                Indicates if the Monster is allowed to move</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Monster._canMove"></a><div id="Monster._canMove-def"><a name="L27"></a><tt class="py-lineno">27</tt> <a class="py-toggle" href="#" id="Monster._canMove-toggle" onclick="return toggle('Monster._canMove');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_canMove">_canMove</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._canMove-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._canMove-expanded"><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_movePulse</tt> <tt class="py-op">==</tt> <tt class="py-number">12</tt> </tt>
+</div><a name="Monster._Moving"></a><div id="Monster._Moving-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="Monster._Moving-toggle" onclick="return toggle('Monster._Moving');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_Moving">_Moving</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._Moving-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._Moving-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">                <tt class="py-name">array</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">"left"</tt><tt class="py-op">,</tt><tt class="py-string">"right"</tt><tt class="py-op">,</tt><tt class="py-string">"up"</tt><tt class="py-op">,</tt><tt class="py-string">"down"</tt><tt class="py-op">]</tt> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">array</tt><tt class="py-op">[</tt><tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">random</tt><tt class="py-op">.</tt><tt class="py-name">randrange</tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt><tt class="py-number">4</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line"> </tt>
+<a name="Monster._getTileID"></a><div id="Monster._getTileID-def"><a name="L33"></a><tt class="py-lineno">33</tt> <a class="py-toggle" href="#" id="Monster._getTileID-toggle" onclick="return toggle('Monster._getTileID');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_getTileID">_getTileID</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._getTileID-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._getTileID-expanded"><a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tileID</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"> </tt>
+<a name="Monster._setTileID"></a><div id="Monster._setTileID-def"><a name="L36"></a><tt class="py-lineno">36</tt> <a class="py-toggle" href="#" id="Monster._setTileID-toggle" onclick="return toggle('Monster._setTileID');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_setTileID">_setTileID</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">tile</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._setTileID-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._setTileID-expanded"><a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_tileID</tt> <tt class="py-op">=</tt> <tt class="py-name">tile</tt> </tt>
+</div><a name="Monster._getX"></a><div id="Monster._getX-def"><a name="L38"></a><tt class="py-lineno">38</tt> <a class="py-toggle" href="#" id="Monster._getX-toggle" onclick="return toggle('Monster._getX');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_getX">_getX</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._getX-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._getX-expanded"><a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_x</tt> </tt>
+</div><a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line"> </tt>
+<a name="Monster._getY"></a><div id="Monster._getY-def"><a name="L41"></a><tt class="py-lineno">41</tt> <a class="py-toggle" href="#" id="Monster._getY-toggle" onclick="return toggle('Monster._getY');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_getY">_getY</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._getY-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._getY-expanded"><a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_y</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line"> </tt>
+<a name="Monster._setX"></a><div id="Monster._setX-def"><a name="L44"></a><tt class="py-lineno">44</tt> <a class="py-toggle" href="#" id="Monster._setX-toggle" onclick="return toggle('Monster._setX');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_setX">_setX</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">x</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._setX-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._setX-expanded"><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_x</tt> <tt class="py-op">=</tt> <tt class="py-name">x</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line"> </tt>
+<a name="Monster._setY"></a><div id="Monster._setY-def"><a name="L47"></a><tt class="py-lineno">47</tt> <a class="py-toggle" href="#" id="Monster._setY-toggle" onclick="return toggle('Monster._setY');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_setY">_setY</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">y</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._setY-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._setY-expanded"><a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_y</tt> <tt class="py-op">=</tt> <tt class="py-name">y</tt> </tt>
+</div><a name="Monster._isDead"></a><div id="Monster._isDead-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="Monster._isDead-toggle" onclick="return toggle('Monster._isDead');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_isDead">_isDead</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._isDead-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._isDead-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_lives</tt><tt class="py-op">&lt;</tt><tt class="py-number">1</tt> </tt>
+</div><a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
+<a name="Monster._decreaseLives"></a><div id="Monster._decreaseLives-def"><a name="L52"></a><tt class="py-lineno">52</tt> <a class="py-toggle" href="#" id="Monster._decreaseLives-toggle" onclick="return toggle('Monster._decreaseLives');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_decreaseLives">_decreaseLives</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._decreaseLives-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._decreaseLives-expanded"><a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_lives</tt><tt class="py-op">-=</tt><tt class="py-number">1</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"> </tt>
+<a name="Monster._resetMovePulse"></a><div id="Monster._resetMovePulse-def"><a name="L55"></a><tt class="py-lineno">55</tt> <a class="py-toggle" href="#" id="Monster._resetMovePulse-toggle" onclick="return toggle('Monster._resetMovePulse');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_resetMovePulse">_resetMovePulse</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._resetMovePulse-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._resetMovePulse-expanded"><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_movePulse</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+</div><a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"> </tt>
+<a name="Monster._increaseMovePulse"></a><div id="Monster._increaseMovePulse-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="Monster._increaseMovePulse-toggle" onclick="return toggle('Monster._increaseMovePulse');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="GamePack.MonsterMod.Monster-class.html#_increaseMovePulse">_increaseMovePulse</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Monster._increaseMovePulse-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Monster._increaseMovePulse-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_movePulse</tt><tt class="py-op">&lt;</tt> <tt class="py-number">12</tt><tt class="py-op">:</tt> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">                        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_movePulse</tt> <tt class="py-op">+=</tt><tt class="py-number">1</tt> </tt>
+</div></div><a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Apr 13 10:42:07 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

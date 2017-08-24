@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>AppPack.AppMod</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="AppPack-module.html">Package&nbsp;AppPack</a> ::
+        Module&nbsp;AppMod
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="AppPack.AppMod-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="AppPack.AppMod-module.html">Module AppPack.AppMod</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-comment">#Imports</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">pygame</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">locals</tt> <tt class="py-keyword">import</tt><tt class="py-op">*</tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt><tt class="py-op">,</tt> <tt class="py-name">math</tt> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package ConfigPack=ConfigPack-module.html"><a title="ConfigPack" class="py-name" href="#" onclick="return doclink('link-0', 'ConfigPack', 'link-0');">ConfigPack</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module ConfigPack.ConfigMod=ConfigPack.ConfigMod-module.html"><a title="ConfigPack.ConfigMod" class="py-name" href="#" onclick="return doclink('link-1', 'ConfigMod', 'link-1');">ConfigMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class ConfigPack.ConfigMod.AppConfigs=ConfigPack.ConfigMod.AppConfigs-class.html"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-2', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class ConfigPack.ConfigMod.SubstateConfigs=ConfigPack.ConfigMod.SubstateConfigs-class.html"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-3', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-4" class="py-name" targets="Class ConfigPack.ConfigMod.OtherConfigs=ConfigPack.ConfigMod.OtherConfigs-class.html"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-4', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-5" class="py-name" targets="Package GamePack=GamePack-module.html"><a title="GamePack" class="py-name" href="#" onclick="return doclink('link-5', 'GamePack', 'link-5');">GamePack</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Module GamePack.GameMod=GamePack.GameMod-module.html"><a title="GamePack.GameMod" class="py-name" href="#" onclick="return doclink('link-6', 'GameMod', 'link-6');">GameMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-7" class="py-name" targets="Class GamePack.GameMod.Game=GamePack.GameMod.Game-class.html"><a title="GamePack.GameMod.Game" class="py-name" href="#" onclick="return doclink('link-7', 'Game', 'link-7');">Game</a></tt> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-8" class="py-name"><a title="GamePack" class="py-name" href="#" onclick="return doclink('link-8', 'GamePack', 'link-5');">GamePack</a></tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Module GamePack.SoundMod=GamePack.SoundMod-module.html"><a title="GamePack.SoundMod" class="py-name" href="#" onclick="return doclink('link-9', 'SoundMod', 'link-9');">SoundMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Class GamePack.SoundMod.Sound=GamePack.SoundMod.Sound-class.html"><a title="GamePack.SoundMod.Sound" class="py-name" href="#" onclick="return doclink('link-10', 'Sound', 'link-10');">Sound</a></tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-11" class="py-name" targets="Package LobbyPack=LobbyPack-module.html"><a title="LobbyPack" class="py-name" href="#" onclick="return doclink('link-11', 'LobbyPack', 'link-11');">LobbyPack</a></tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Module LobbyPack.LobbyMod=LobbyPack.LobbyMod-module.html"><a title="LobbyPack.LobbyMod" class="py-name" href="#" onclick="return doclink('link-12', 'LobbyMod', 'link-12');">LobbyMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-13" class="py-name" targets="Class LobbyPack.LobbyMod.Lobby=LobbyPack.LobbyMod.Lobby-class.html"><a title="LobbyPack.LobbyMod.Lobby" class="py-name" href="#" onclick="return doclink('link-13', 'Lobby', 'link-13');">Lobby</a></tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line"> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-string">        Main Window App</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line"><tt class="py-string">        The application is created along with a pygame window and screen</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="App"></a><div id="App-def"><a name="L15"></a><tt class="py-lineno">15</tt> <a class="py-toggle" href="#" id="App-toggle" onclick="return toggle('App');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="AppPack.AppMod.App-class.html">App</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="App-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="App-expanded"><a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line"><tt class="py-docstring">                App Constructor: initialization of pygame objects, window components and splash screen</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="App.__init__"></a><div id="App.__init__-def"><a name="L20"></a><tt class="py-lineno">20</tt> <a class="py-toggle" href="#" id="App.__init__-toggle" onclick="return toggle('App.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.AppMod.App-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="App.__init__-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="App.__init__-expanded"><a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">                <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">environ</tt><tt class="py-op">[</tt><tt class="py-string">'SDL_VIDEO_WINDOW_POS'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">"%d,%d"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-number">100</tt><tt class="py-op">,</tt> <tt class="py-number">100</tt><tt class="py-op">)</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line">                <tt class="py-comment">#Initialize pygame</tt> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">                <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">init</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">                <tt class="py-comment">#Window Configs</tt> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">display</tt><tt class="py-op">.</tt><tt class="py-name">set_mode</tt><tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-14', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.WINDOWSIZE=ConfigPack.ConfigMod.AppConfigs-class.html#WINDOWSIZE"><a title="ConfigPack.ConfigMod.AppConfigs.WINDOWSIZE" class="py-name" href="#" onclick="return doclink('link-15', 'WINDOWSIZE', 'link-15');">WINDOWSIZE</a></tt><tt class="py-op">,</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Variable AppPack.AppMod.NOFRAME=AppPack.AppMod-module.html#NOFRAME,Variable GamePack.BombMod.NOFRAME=GamePack.BombMod-module.html#NOFRAME,Variable GamePack.GameMod.NOFRAME=GamePack.GameMod-module.html#NOFRAME,Variable GamePack.GameOverMod.NOFRAME=GamePack.GameOverMod-module.html#NOFRAME,Variable GamePack.InGameMod.NOFRAME=GamePack.InGameMod-module.html#NOFRAME,Variable GamePack.InMenuMod.NOFRAME=GamePack.InMenuMod-module.html#NOFRAME,Variable GamePack.InMultMod.NOFRAME=GamePack.InMultMod-module.html#NOFRAME,Variable GamePack.MapMod.NOFRAME=GamePack.MapMod-module.html#NOFRAME,Variable GamePack.MonsterMod.NOFRAME=GamePack.MonsterMod-module.html#NOFRAME,Variable GamePack.PlayerMod.NOFRAME=GamePack.PlayerMod-module.html#NOFRAME,Variable GamePack.SoundMod.NOFRAME=GamePack.SoundMod-module.html#NOFRAME,Variable GamePack.TileMod.NOFRAME=GamePack.TileMod-module.html#NOFRAME,Variable GamePack.WinMod.NOFRAME=GamePack.WinMod-module.html#NOFRAME,Variable LobbyPack.AuthMenuMod.NOFRAME=LobbyPack.AuthMenuMod-module.html#NOFRAME,Variable LobbyPack.LobbyMod.NOFRAME=LobbyPack.LobbyMod-module.html#NOFRAME,Variable LobbyPack.MainMenuMod.NOFRAME=LobbyPack.MainMenuMod-module.html#NOFRAME,Variable LobbyPack.OptionsMenuMod.NOFRAME=LobbyPack.OptionsMenuMod-module.html#NOFRAME,Variable LobbyPack.StatsMenuMod.NOFRAME=LobbyPack.StatsMenuMod-module.html#NOFRAME"><a title="AppPack.AppMod.NOFRAME
+GamePack.BombMod.NOFRAME
+GamePack.GameMod.NOFRAME
+GamePack.GameOverMod.NOFRAME
+GamePack.InGameMod.NOFRAME
+GamePack.InMenuMod.NOFRAME
+GamePack.InMultMod.NOFRAME
+GamePack.MapMod.NOFRAME
+GamePack.MonsterMod.NOFRAME
+GamePack.PlayerMod.NOFRAME
+GamePack.SoundMod.NOFRAME
+GamePack.TileMod.NOFRAME
+GamePack.WinMod.NOFRAME
+LobbyPack.AuthMenuMod.NOFRAME
+LobbyPack.LobbyMod.NOFRAME
+LobbyPack.MainMenuMod.NOFRAME
+LobbyPack.OptionsMenuMod.NOFRAME
+LobbyPack.StatsMenuMod.NOFRAME" class="py-name" href="#" onclick="return doclink('link-16', 'NOFRAME', 'link-16');">NOFRAME</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">                <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">display</tt><tt class="py-op">.</tt><tt class="py-name">set_caption</tt><tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-17', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.WINDOWNAME=ConfigPack.ConfigMod.AppConfigs-class.html#WINDOWNAME"><a title="ConfigPack.ConfigMod.AppConfigs.WINDOWNAME" class="py-name" href="#" onclick="return doclink('link-18', 'WINDOWNAME', 'link-18');">WINDOWNAME</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background_file</tt> <tt class="py-op">=</tt> <tt class="py-string">"sprites/bg.jpg"</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">image</tt><tt class="py-op">.</tt><tt class="py-name">load</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_logo_file</tt> <tt class="py-op">=</tt> <tt class="py-string">"sprites/logo.png"</tt> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_logo_image</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">image</tt><tt class="py-op">.</tt><tt class="py-name">load</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_logo_file</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_loadfont</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">font</tt><tt class="py-op">.</tt><tt class="py-name">Font</tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-19', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.FONT_PATH=ConfigPack.ConfigMod.OtherConfigs-class.html#FONT_PATH"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_PATH" class="py-name" href="#" onclick="return doclink('link-20', 'FONT_PATH', 'link-20');">FONT_PATH</a></tt><tt class="py-op">,</tt><tt id="link-21" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-21', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.FONT_SIZE=ConfigPack.ConfigMod.OtherConfigs-class.html#FONT_SIZE"><a title="ConfigPack.ConfigMod.OtherConfigs.FONT_SIZE" class="py-name" href="#" onclick="return doclink('link-22', 'FONT_SIZE', 'link-22');">FONT_SIZE</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_loadtext</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_loadfont</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-string">"LOADING..."</tt><tt class="py-op">,</tt> <tt class="py-name">True</tt><tt class="py-op">,</tt> <tt id="link-23" class="py-name"><a title="ConfigPack.ConfigMod.OtherConfigs" class="py-name" href="#" onclick="return doclink('link-23', 'OtherConfigs', 'link-4');">OtherConfigs</a></tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Variable ConfigPack.ConfigMod.OtherConfigs.COLOR_GRAY=ConfigPack.ConfigMod.OtherConfigs-class.html#COLOR_GRAY"><a title="ConfigPack.ConfigMod.OtherConfigs.COLOR_GRAY" class="py-name" href="#" onclick="return doclink('link-24', 'COLOR_GRAY', 'link-24');">COLOR_GRAY</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno">37</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_background</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_logo_image</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">300</tt><tt class="py-op">,</tt><tt class="py-number">214</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">.</tt><tt class="py-name">blit</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_loadtext</tt><tt class="py-op">,</tt> <tt class="py-op">(</tt><tt class="py-number">310</tt><tt class="py-op">,</tt> <tt class="py-number">400</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">                <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">display</tt><tt class="py-op">.</tt><tt class="py-name">update</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line">                <tt class="py-comment">#FPS Clock</tt> </tt>
+<a name="L43"></a><tt class="py-lineno">43</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_FPSClock</tt> <tt class="py-op">=</tt> <tt class="py-name">pygame</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">Clock</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line">                <tt class="py-comment">#Sound</tt> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sound</tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name"><a title="GamePack.SoundMod.Sound" class="py-name" href="#" onclick="return doclink('link-25', 'Sound', 'link-10');">Sound</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line">                <tt class="py-comment">#Initialize states</tt> </tt>
+<a name="L49"></a><tt class="py-lineno">49</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_lobby</tt> <tt class="py-op">=</tt> <tt id="link-26" class="py-name"><a title="LobbyPack.LobbyMod.Lobby" class="py-name" href="#" onclick="return doclink('link-26', 'Lobby', 'link-13');">Lobby</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_FPSClock</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sound</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line"> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line"><tt class="py-string">                State Loop that allows branching from one State to another</tt> </tt>
+<a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="App.run"></a><div id="App.run-def"><a name="L55"></a><tt class="py-lineno">55</tt> <a class="py-toggle" href="#" id="App.run-toggle" onclick="return toggle('App.run');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.AppMod.App-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="App.run-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="App.run-expanded"><a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line">                <tt class="py-comment">#Initial state</tt> </tt>
+<a name="L58"></a><tt class="py-lineno">58</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-27', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.STATE_LOBBY=ConfigPack.ConfigMod.AppConfigs-class.html#STATE_LOBBY"><a title="ConfigPack.ConfigMod.AppConfigs.STATE_LOBBY" class="py-name" href="#" onclick="return doclink('link-28', 'STATE_LOBBY', 'link-28');">STATE_LOBBY</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line">                <tt class="py-comment">#State Loop</tt> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">                <tt class="py-keyword">while</tt> <tt class="py-number">1</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line">                        <tt class="py-comment">#Lobby State</tt> </tt>
+<a name="L64"></a><tt class="py-lineno">64</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">==</tt> <tt id="link-29" class="py-name"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-29', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="ConfigPack.ConfigMod.AppConfigs.STATE_LOBBY" class="py-name" href="#" onclick="return doclink('link-30', 'STATE_LOBBY', 'link-28');">STATE_LOBBY</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_lobby</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name" targets="Method AppPack.AppMod.App.run()=AppPack.AppMod.App-class.html#run,Method GamePack.GameMod.Game.run()=GamePack.GameMod.Game-class.html#run,Method LobbyPack.LobbyMod.Lobby.run()=LobbyPack.LobbyMod.Lobby-class.html#run"><a title="AppPack.AppMod.App.run
+GamePack.GameMod.Game.run
+LobbyPack.LobbyMod.Lobby.run" class="py-name" href="#" onclick="return doclink('link-31', 'run', 'link-31');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">                        <tt class="py-comment">#Game State</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">==</tt> <tt id="link-32" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-32', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INGAME=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INGAME"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INGAME" class="py-name" href="#" onclick="return doclink('link-33', 'SUBSTATE_INGAME', 'link-33');">SUBSTATE_INGAME</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">=</tt> <tt id="link-34" class="py-name"><a title="GamePack.GameMod.Game" class="py-name" href="#" onclick="return doclink('link-34', 'Game', 'link-7');">Game</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_FPSClock</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sound</tt><tt class="py-op">,</tt> <tt id="link-35" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-35', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INGAME" class="py-name" href="#" onclick="return doclink('link-36', 'SUBSTATE_INGAME', 'link-33');">SUBSTATE_INGAME</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="AppPack.AppMod.App.run
+GamePack.GameMod.Game.run
+LobbyPack.LobbyMod.Lobby.run" class="py-name" href="#" onclick="return doclink('link-37', 'run', 'link-31');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno">70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">==</tt> <tt id="link-38" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-38', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-39" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULT=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INMULT"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULT" class="py-name" href="#" onclick="return doclink('link-39', 'SUBSTATE_INMULT', 'link-39');">SUBSTATE_INMULT</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">=</tt> <tt id="link-40" class="py-name"><a title="GamePack.GameMod.Game" class="py-name" href="#" onclick="return doclink('link-40', 'Game', 'link-7');">Game</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_FPSClock</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sound</tt><tt class="py-op">,</tt> <tt id="link-41" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-41', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULT" class="py-name" href="#" onclick="return doclink('link-42', 'SUBSTATE_INMULT', 'link-39');">SUBSTATE_INMULT</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="AppPack.AppMod.App.run
+GamePack.GameMod.Game.run
+LobbyPack.LobbyMod.Lobby.run" class="py-name" href="#" onclick="return doclink('link-43', 'run', 'link-31');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno">73</tt>  <tt class="py-line"> </tt>
+<a name="L74"></a><tt class="py-lineno">74</tt>  <tt class="py-line">                        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">==</tt> <tt id="link-44" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-44', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULTALT=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_INMULTALT"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULTALT" class="py-name" href="#" onclick="return doclink('link-45', 'SUBSTATE_INMULTALT', 'link-45');">SUBSTATE_INMULTALT</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L75"></a><tt class="py-lineno">75</tt>  <tt class="py-line">                                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_state</tt> <tt class="py-op">=</tt> <tt id="link-46" class="py-name"><a title="GamePack.GameMod.Game" class="py-name" href="#" onclick="return doclink('link-46', 'Game', 'link-7');">Game</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_FPSClock</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sound</tt><tt class="py-op">,</tt> <tt id="link-47" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-47', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_INMULTALT" class="py-name" href="#" onclick="return doclink('link-48', 'SUBSTATE_INMULTALT', 'link-45');">SUBSTATE_INMULTALT</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name"><a title="AppPack.AppMod.App.run
+GamePack.GameMod.Game.run
+LobbyPack.LobbyMod.Lobby.run" class="py-name" href="#" onclick="return doclink('link-49', 'run', 'link-31');">run</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L76"></a><tt class="py-lineno">76</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Apr 13 10:42:06 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

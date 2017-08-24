@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>AppPack.SubstateMod</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="AppPack-module.html">Package&nbsp;AppPack</a> ::
+        Module&nbsp;SubstateMod
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="AppPack.SubstateMod-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="AppPack.SubstateMod-module.html">Module AppPack.SubstateMod</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-name">sys</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-string">".."</tt><tt class="py-op">)</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package ConfigPack=ConfigPack-module.html"><a title="ConfigPack" class="py-name" href="#" onclick="return doclink('link-0', 'ConfigPack', 'link-0');">ConfigPack</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Module ConfigPack.ConfigMod=ConfigPack.ConfigMod-module.html"><a title="ConfigPack.ConfigMod" class="py-name" href="#" onclick="return doclink('link-1', 'ConfigMod', 'link-1');">ConfigMod</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Class ConfigPack.ConfigMod.AppConfigs=ConfigPack.ConfigMod.AppConfigs-class.html"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-2', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">,</tt> <tt id="link-3" class="py-name" targets="Class ConfigPack.ConfigMod.SubstateConfigs=ConfigPack.ConfigMod.SubstateConfigs-class.html"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-3', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt> </tt>
+<a name="L4"></a><tt class="py-lineno"> 4</tt>  <tt class="py-line"> </tt>
+<a name="L5"></a><tt class="py-lineno"> 5</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line"><tt class="py-string">        Parent class for all Substate objects</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="Substate"></a><div id="Substate-def"><a name="L8"></a><tt class="py-lineno"> 8</tt> <a class="py-toggle" href="#" id="Substate-toggle" onclick="return toggle('Substate');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html">Substate</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="Substate-expanded"><a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line"> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line"><tt class="py-docstring">                Constructor that handles all injections and initialization of substate parameters</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="Substate.__init__"></a><div id="Substate.__init__-def"><a name="L13"></a><tt class="py-lineno">13</tt> <a class="py-toggle" href="#" id="Substate.__init__-toggle" onclick="return toggle('Substate.__init__');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">screen</tt><tt class="py-op">,</tt> <tt class="py-param">fpsclock</tt><tt class="py-op">,</tt> <tt class="py-param">sound</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate.__init__-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate.__init__-expanded"><a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">                 </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">                <tt class="py-comment">#Screen</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_screen</tt> <tt class="py-op">=</tt> <tt class="py-name">screen</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line"> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">                <tt class="py-comment">#FPS Clock</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_FPS</tt> <tt class="py-op">=</tt> <tt id="link-4" class="py-name"><a title="ConfigPack.ConfigMod.AppConfigs" class="py-name" href="#" onclick="return doclink('link-4', 'AppConfigs', 'link-2');">AppConfigs</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Variable ConfigPack.ConfigMod.AppConfigs.FPS=ConfigPack.ConfigMod.AppConfigs-class.html#FPS"><a title="ConfigPack.ConfigMod.AppConfigs.FPS" class="py-name" href="#" onclick="return doclink('link-5', 'FPS', 'link-5');">FPS</a></tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_fpsclock</tt> <tt class="py-op">=</tt> <tt class="py-name">fpsclock</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line"> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">                <tt class="py-comment">#Sound</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_sound</tt> <tt class="py-op">=</tt> <tt class="py-name">sound</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">                <tt class="py-comment">#Initialize substate to undefined</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_substate</tt> <tt class="py-op">=</tt> <tt id="link-6" class="py-name"><a title="ConfigPack.ConfigMod.SubstateConfigs" class="py-name" href="#" onclick="return doclink('link-6', 'SubstateConfigs', 'link-3');">SubstateConfigs</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Variable ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_UNDEFINED=ConfigPack.ConfigMod.SubstateConfigs-class.html#SUBSTATE_UNDEFINED"><a title="ConfigPack.ConfigMod.SubstateConfigs.SUBSTATE_UNDEFINED" class="py-name" href="#" onclick="return doclink('link-7', 'SUBSTATE_UNDEFINED', 'link-7');">SUBSTATE_UNDEFINED</a></tt> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line">                <tt class="py-comment">#Initialize objects</tt> </tt>
+<a name="L29"></a><tt class="py-lineno">29</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method AppPack.SubstateMod.Substate._initObjects()=AppPack.SubstateMod.Substate-class.html#_initObjects,Method GamePack.GameOverMod.GameOver._initObjects()=GamePack.GameOverMod.GameOver-class.html#_initObjects,Method GamePack.InGameMod.InGame._initObjects()=GamePack.InGameMod.InGame-class.html#_initObjects,Method GamePack.InMenuMod.InMenu._initObjects()=GamePack.InMenuMod.InMenu-class.html#_initObjects,Method GamePack.InMultMod.InMult._initObjects()=GamePack.InMultMod.InMult-class.html#_initObjects,Method GamePack.WinMod.Win._initObjects()=GamePack.WinMod.Win-class.html#_initObjects,Method LobbyPack.AuthMenuMod.AuthMenu._initObjects()=LobbyPack.AuthMenuMod.AuthMenu-class.html#_initObjects,Method LobbyPack.MainMenuMod.MainMenu._initObjects()=LobbyPack.MainMenuMod.MainMenu-class.html#_initObjects,Method LobbyPack.OptionsMenuMod.OptionsMenu._initObjects()=LobbyPack.OptionsMenuMod.OptionsMenu-class.html#_initObjects,Method LobbyPack.StatsMenuMod.StatsMenu._initObjects()=LobbyPack.StatsMenuMod.StatsMenu-class.html#_initObjects"><a title="AppPack.SubstateMod.Substate._initObjects
+GamePack.GameOverMod.GameOver._initObjects
+GamePack.InGameMod.InGame._initObjects
+GamePack.InMenuMod.InMenu._initObjects
+GamePack.InMultMod.InMult._initObjects
+GamePack.WinMod.Win._initObjects
+LobbyPack.AuthMenuMod.AuthMenu._initObjects
+LobbyPack.MainMenuMod.MainMenu._initObjects
+LobbyPack.OptionsMenuMod.OptionsMenu._initObjects
+LobbyPack.StatsMenuMod.StatsMenu._initObjects" class="py-name" href="#" onclick="return doclink('link-8', '_initObjects', 'link-8');">_initObjects</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line"> </tt>
+<a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line">                <tt class="py-comment">#Initialize images</tt> </tt>
+<a name="L32"></a><tt class="py-lineno">32</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method AppPack.SubstateMod.Substate._initImages()=AppPack.SubstateMod.Substate-class.html#_initImages,Method GamePack.GameOverMod.GameOver._initImages()=GamePack.GameOverMod.GameOver-class.html#_initImages,Method GamePack.InGameMod.InGame._initImages()=GamePack.InGameMod.InGame-class.html#_initImages,Method GamePack.InMenuMod.InMenu._initImages()=GamePack.InMenuMod.InMenu-class.html#_initImages,Method GamePack.InMultMod.InMult._initImages()=GamePack.InMultMod.InMult-class.html#_initImages,Method GamePack.WinMod.Win._initImages()=GamePack.WinMod.Win-class.html#_initImages,Method LobbyPack.AuthMenuMod.AuthMenu._initImages()=LobbyPack.AuthMenuMod.AuthMenu-class.html#_initImages,Method LobbyPack.MainMenuMod.MainMenu._initImages()=LobbyPack.MainMenuMod.MainMenu-class.html#_initImages,Method LobbyPack.OptionsMenuMod.OptionsMenu._initImages()=LobbyPack.OptionsMenuMod.OptionsMenu-class.html#_initImages,Method LobbyPack.StatsMenuMod.StatsMenu._initImages()=LobbyPack.StatsMenuMod.StatsMenu-class.html#_initImages"><a title="AppPack.SubstateMod.Substate._initImages
+GamePack.GameOverMod.GameOver._initImages
+GamePack.InGameMod.InGame._initImages
+GamePack.InMenuMod.InMenu._initImages
+GamePack.InMultMod.InMult._initImages
+GamePack.WinMod.Win._initImages
+LobbyPack.AuthMenuMod.AuthMenu._initImages
+LobbyPack.MainMenuMod.MainMenu._initImages
+LobbyPack.OptionsMenuMod.OptionsMenu._initImages
+LobbyPack.StatsMenuMod.StatsMenu._initImages" class="py-name" href="#" onclick="return doclink('link-9', '_initImages', 'link-9');">_initImages</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L33"></a><tt class="py-lineno">33</tt>  <tt class="py-line"> </tt>
+<a name="L34"></a><tt class="py-lineno">34</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L35"></a><tt class="py-lineno">35</tt>  <tt class="py-line"><tt class="py-string">                Method to allow initialization of substate objects</tt> </tt>
+<a name="L36"></a><tt class="py-lineno">36</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Substate._initObjects"></a><div id="Substate._initObjects-def"><a name="L37"></a><tt class="py-lineno">37</tt> <a class="py-toggle" href="#" id="Substate._initObjects-toggle" onclick="return toggle('Substate._initObjects');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#_initObjects">_initObjects</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate._initObjects-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate._initObjects-expanded"><a name="L38"></a><tt class="py-lineno">38</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L39"></a><tt class="py-lineno">39</tt>  <tt class="py-line"> </tt>
+<a name="L40"></a><tt class="py-lineno">40</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L41"></a><tt class="py-lineno">41</tt>  <tt class="py-line"><tt class="py-string">                Method to allow initialization of substate images</tt> </tt>
+<a name="L42"></a><tt class="py-lineno">42</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Substate._initImages"></a><div id="Substate._initImages-def"><a name="L43"></a><tt class="py-lineno">43</tt> <a class="py-toggle" href="#" id="Substate._initImages-toggle" onclick="return toggle('Substate._initImages');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#_initImages">_initImages</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate._initImages-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate._initImages-expanded"><a name="L44"></a><tt class="py-lineno">44</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L45"></a><tt class="py-lineno">45</tt>  <tt class="py-line"> </tt>
+<a name="L46"></a><tt class="py-lineno">46</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L47"></a><tt class="py-lineno">47</tt>  <tt class="py-line"><tt class="py-string">                Method called by State loop when current substate is selected (This method is called each frame)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno">48</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Substate.tick"></a><div id="Substate.tick-def"><a name="L49"></a><tt class="py-lineno">49</tt> <a class="py-toggle" href="#" id="Substate.tick-toggle" onclick="return toggle('Substate.tick');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#tick">tick</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate.tick-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate.tick-expanded"><a name="L50"></a><tt class="py-lineno">50</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method AppPack.SubstateMod.Substate._ticked()=AppPack.SubstateMod.Substate-class.html#_ticked,Method GamePack.GameOverMod.GameOver._ticked()=GamePack.GameOverMod.GameOver-class.html#_ticked,Method GamePack.InGameMod.InGame._ticked()=GamePack.InGameMod.InGame-class.html#_ticked,Method GamePack.InMenuMod.InMenu._ticked()=GamePack.InMenuMod.InMenu-class.html#_ticked,Method GamePack.InMultMod.InMult._ticked()=GamePack.InMultMod.InMult-class.html#_ticked,Method GamePack.WinMod.Win._ticked()=GamePack.WinMod.Win-class.html#_ticked,Method LobbyPack.AuthMenuMod.AuthMenu._ticked()=LobbyPack.AuthMenuMod.AuthMenu-class.html#_ticked,Method LobbyPack.MainMenuMod.MainMenu._ticked()=LobbyPack.MainMenuMod.MainMenu-class.html#_ticked,Method LobbyPack.OptionsMenuMod.OptionsMenu._ticked()=LobbyPack.OptionsMenuMod.OptionsMenu-class.html#_ticked,Method LobbyPack.StatsMenuMod.StatsMenu._ticked()=LobbyPack.StatsMenuMod.StatsMenu-class.html#_ticked"><a title="AppPack.SubstateMod.Substate._ticked
+GamePack.GameOverMod.GameOver._ticked
+GamePack.InGameMod.InGame._ticked
+GamePack.InMenuMod.InMenu._ticked
+GamePack.InMultMod.InMult._ticked
+GamePack.WinMod.Win._ticked
+LobbyPack.AuthMenuMod.AuthMenu._ticked
+LobbyPack.MainMenuMod.MainMenu._ticked
+LobbyPack.OptionsMenuMod.OptionsMenu._ticked
+LobbyPack.StatsMenuMod.StatsMenu._ticked" class="py-name" href="#" onclick="return doclink('link-10', '_ticked', 'link-10');">_ticked</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno">51</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method AppPack.SubstateMod.Substate._listen()=AppPack.SubstateMod.Substate-class.html#_listen,Method GamePack.GameOverMod.GameOver._listen()=GamePack.GameOverMod.GameOver-class.html#_listen,Method GamePack.InGameMod.InGame._listen()=GamePack.InGameMod.InGame-class.html#_listen,Method GamePack.InMenuMod.InMenu._listen()=GamePack.InMenuMod.InMenu-class.html#_listen,Method GamePack.InMultMod.InMult._listen()=GamePack.InMultMod.InMult-class.html#_listen,Method GamePack.WinMod.Win._listen()=GamePack.WinMod.Win-class.html#_listen,Method LobbyPack.AuthMenuMod.AuthMenu._listen()=LobbyPack.AuthMenuMod.AuthMenu-class.html#_listen,Method LobbyPack.MainMenuMod.MainMenu._listen()=LobbyPack.MainMenuMod.MainMenu-class.html#_listen,Method LobbyPack.OptionsMenuMod.OptionsMenu._listen()=LobbyPack.OptionsMenuMod.OptionsMenu-class.html#_listen,Method LobbyPack.StatsMenuMod.StatsMenu._listen()=LobbyPack.StatsMenuMod.StatsMenu-class.html#_listen"><a title="AppPack.SubstateMod.Substate._listen
+GamePack.GameOverMod.GameOver._listen
+GamePack.InGameMod.InGame._listen
+GamePack.InMenuMod.InMenu._listen
+GamePack.InMultMod.InMult._listen
+GamePack.WinMod.Win._listen
+LobbyPack.AuthMenuMod.AuthMenu._listen
+LobbyPack.MainMenuMod.MainMenu._listen
+LobbyPack.OptionsMenuMod.OptionsMenu._listen
+LobbyPack.StatsMenuMod.StatsMenu._listen" class="py-name" href="#" onclick="return doclink('link-11', '_listen', 'link-11');">_listen</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L52"></a><tt class="py-lineno">52</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method AppPack.SubstateMod.Substate._render()=AppPack.SubstateMod.Substate-class.html#_render,Method GamePack.GameOverMod.GameOver._render()=GamePack.GameOverMod.GameOver-class.html#_render,Method GamePack.InGameMod.InGame._render()=GamePack.InGameMod.InGame-class.html#_render,Method GamePack.InMenuMod.InMenu._render()=GamePack.InMenuMod.InMenu-class.html#_render,Method GamePack.InMultMod.InMult._render()=GamePack.InMultMod.InMult-class.html#_render,Method GamePack.WinMod.Win._render()=GamePack.WinMod.Win-class.html#_render,Method LobbyPack.AuthMenuMod.AuthMenu._render()=LobbyPack.AuthMenuMod.AuthMenu-class.html#_render,Method LobbyPack.MainMenuMod.MainMenu._render()=LobbyPack.MainMenuMod.MainMenu-class.html#_render,Method LobbyPack.OptionsMenuMod.OptionsMenu._render()=LobbyPack.OptionsMenuMod.OptionsMenu-class.html#_render,Method LobbyPack.StatsMenuMod.StatsMenu._render()=LobbyPack.StatsMenuMod.StatsMenu-class.html#_render"><a title="AppPack.SubstateMod.Substate._render
+GamePack.GameOverMod.GameOver._render
+GamePack.InGameMod.InGame._render
+GamePack.InMenuMod.InMenu._render
+GamePack.InMultMod.InMult._render
+GamePack.WinMod.Win._render
+LobbyPack.AuthMenuMod.AuthMenu._render
+LobbyPack.MainMenuMod.MainMenu._render
+LobbyPack.OptionsMenuMod.OptionsMenu._render
+LobbyPack.StatsMenuMod.StatsMenu._render" class="py-name" href="#" onclick="return doclink('link-12', '_render', 'link-12');">_render</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno">53</tt>  <tt class="py-line">                <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_substate</tt> </tt>
+</div><a name="L54"></a><tt class="py-lineno">54</tt>  <tt class="py-line"> </tt>
+<a name="L55"></a><tt class="py-lineno">55</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L56"></a><tt class="py-lineno">56</tt>  <tt class="py-line"><tt class="py-string">                Method to allow handling of frame-dependent functions for a substate (This method is called each frame)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno">57</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Substate._ticked"></a><div id="Substate._ticked-def"><a name="L58"></a><tt class="py-lineno">58</tt> <a class="py-toggle" href="#" id="Substate._ticked-toggle" onclick="return toggle('Substate._ticked');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#_ticked">_ticked</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate._ticked-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate._ticked-expanded"><a name="L59"></a><tt class="py-lineno">59</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno">60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno">61</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L62"></a><tt class="py-lineno">62</tt>  <tt class="py-line"><tt class="py-string">                Method to allow listeners for a substate (This method is called each frame)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno">63</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Substate._listen"></a><div id="Substate._listen-def"><a name="L64"></a><tt class="py-lineno">64</tt> <a class="py-toggle" href="#" id="Substate._listen-toggle" onclick="return toggle('Substate._listen');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#_listen">_listen</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate._listen-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate._listen-expanded"><a name="L65"></a><tt class="py-lineno">65</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div><a name="L66"></a><tt class="py-lineno">66</tt>  <tt class="py-line"> </tt>
+<a name="L67"></a><tt class="py-lineno">67</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L68"></a><tt class="py-lineno">68</tt>  <tt class="py-line"><tt class="py-string">                Method to allow rendering for a substate (This method is called each frame)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno">69</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="Substate._render"></a><div id="Substate._render-def"><a name="L70"></a><tt class="py-lineno">70</tt> <a class="py-toggle" href="#" id="Substate._render-toggle" onclick="return toggle('Substate._render');">-</a><tt class="py-line">        <tt class="py-keyword">def</tt> <a class="py-def-name" href="AppPack.SubstateMod.Substate-class.html#_render">_render</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Substate._render-collapsed" style="display:none;" pad="++" indent="++++++++++++"></div><div id="Substate._render-expanded"><a name="L71"></a><tt class="py-lineno">71</tt>  <tt class="py-line">                <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt> </tt>
+</div></div><a name="L72"></a><tt class="py-lineno">72</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Apr 13 10:42:07 2014
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
